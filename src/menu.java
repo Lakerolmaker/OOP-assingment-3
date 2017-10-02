@@ -35,8 +35,7 @@ public class menu {
 					}catch(Exception e){}
 					
 					
-					//53
-					 // 7   14    19     
+					  
 					SpaceA = "";
 					int aWhiteSpace = 10 - a.length() ;
 					for(int z = 0; z < aWhiteSpace; z++) {
@@ -83,7 +82,7 @@ public class menu {
 
 				}
 		
-				sleep(2000);
+		 sleep(2000);
 	}
 	
 	
