@@ -4,27 +4,29 @@ import employees.*;
 
 public class ReusaxCorp {
 	
+	
 	double directorsBenefit = 5000;
 
 	public void setDirectorsBenefit(double directorsBenefit) {
 		this.directorsBenefit = directorsBenefit;
 	}
 
-	private static ArrayList<Employee> comanyEmplyee = new ArrayList<Employee>();
+	private static ArrayList<Employee> companyEmployee =  new ArrayList<Employee>();
+	
 	
 	
 	public static void registerEmployee(Employee newRecruit) {
 
-		comanyEmplyee.add(newRecruit);
+		companyEmployee.add(newRecruit);
 		
 	}
 	
 	public static void removeEmployee(String id) {
 		
-		for(int i = 0; i < comanyEmplyee.size(); i++) {
+		for(int i = 0; i < companyEmployee.size(); i++) {
 			
-			if(comanyEmplyee.get(i).getEmployeeName().equals(id)) {
-				comanyEmplyee.remove(i);
+			if(companyEmployee.get(i).getEmployeeName().equals(id)) {
+				companyEmployee.remove(i);
 				return;
 			}
 			
@@ -40,9 +42,9 @@ public class ReusaxCorp {
 		
 		double tottalMoney = 0;
 		
-		for(int i = 0; i < comanyEmplyee.size(); i++) {
+		for(int i = 0; i < companyEmployee.size(); i++) {
 			
-			tottalMoney += comanyEmplyee.get(i).getGrossSalary();
+			tottalMoney += companyEmployee.get(i).getGrossSalary();
 		}
 		
 		
@@ -56,16 +58,16 @@ public class ReusaxCorp {
 	
 	public static void printEmployee(String id) {
 		
-		for(int i = 0; i < comanyEmplyee.size(); i++) {
+		for(int i = 0; i < companyEmployee.size(); i++) {
 			
-			if(comanyEmplyee.get(i).getEmployeeName().equals(id)) {
+			if(companyEmployee.get(i).getEmployeeName().equals(id)) {
 			
 			//: prints the user to the console
 			main.print(" --------------------------- " + "\n");
-			main.print(" ID : " + comanyEmplyee.get(i).getId() + "\n");
-			main.print(" Name : " + comanyEmplyee.get(i).getEmployeeName() + "\n");
-			main.print(" Gross Salary : " + comanyEmplyee.get(i).getGrossSalary() + "\n");
-			main.print(" Net Salary : " + comanyEmplyee.get(i).getNetSalary() + "\n");
+			main.print(" ID : " + companyEmployee.get(i).getId() + "\n");
+			main.print(" Name : " + companyEmployee.get(i).getEmployeeName() + "\n");
+			main.print(" Gross Salary : " + companyEmployee.get(i).getGrossSalary() + "\n");
+			main.print(" Net Salary : " + companyEmployee.get(i).getNetSalary() + "\n");
 			main.print(" --------------------------- " + "\n" + "\n");
 			return;
 			
@@ -77,14 +79,14 @@ public class ReusaxCorp {
 	public static void printAllEmployees() {
 		main.print("hello");
 		
-		for(int i = 0; i < comanyEmplyee.size(); i++) {
+		for(int i = 0; i < companyEmployee.size(); i++) {
 			
 			//: prints the user to the console
 			main.print(" --------------------------- " + "\n");
-			main.print(" ID : " + comanyEmplyee.get(i).getId() + "\n");
-			main.print(" Name : " + comanyEmplyee.get(i).getEmployeeName() + "\n");
-			main.print(" Gross Salary : " + comanyEmplyee.get(i).getGrossSalary() + "\n");
-			main.print(" Net Salary : " + comanyEmplyee.get(i).getNetSalary() + "\n");
+			main.print(" ID : " + companyEmployee.get(i).getId() + "\n");
+			main.print(" Name : " + companyEmployee.get(i).getEmployeeName() + "\n");
+			main.print(" Gross Salary : " + companyEmployee.get(i).getGrossSalary() + "\n");
+			main.print(" Net Salary : " + companyEmployee.get(i).getNetSalary() + "\n");
 			main.print(" --------------------------- " + "\n" + "\n");
 			
 			
@@ -92,22 +94,22 @@ public class ReusaxCorp {
 		
 	}
 	
-//	 nono V
-//	public static void setDirecotrBenefits() {
-//		
-//		for(int i = 0; i < comanyEmplyee.size(); i++) {
-//			
-//			if(comanyEmplyee.get(i).getClass().isInstance(Director.class)) {
-//				
-//			}
-//			
-//		}
-//		
-//	}
+	// TODO : check 
+	public static void setDirecotrBenefits() {
+		
+		for(int i = 0; i < companyEmployee.size(); i++) {
+			
+			if(companyEmployee.get(i).getClass().isInstance(Director.class)) {
+				
+			}
+			
+		}
+		
+	}
 	
 	public static void getNumberOfEmployees() {
 		main.print(" --------------------------- " + "\n");
-		main.print("Number of employees : " + comanyEmplyee.size());
+		main.print("Number of employees : " + companyEmployee.size());
 		main.print(" --------------------------- " + "\n");
 	
 	}
@@ -133,6 +135,8 @@ public class ReusaxCorp {
 	
 	//: Sorting algorith
 	public static void SortAlfabeticaly() {
+		
+		
 		
 	}
 	
