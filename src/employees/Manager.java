@@ -13,6 +13,8 @@ public class Manager extends Employee{
 	public Manager(String id, String employeeName, double grossSalary, String degree) {
 		super(id, employeeName, grossSalary);
 		
+		this.grossSalary = grossSalary + bonus; //????? should the bonus be added to the salary
+		
 		this.degree = degree;
 		this.bonus = getManagerBonus(degree);//????
 		
@@ -39,8 +41,17 @@ public class Manager extends Employee{
 			System.out.println("That's not a valid degree");
 			return 0; //=?????
 		}
-		return 0;
+		return 0; //CHANGE THIS
 	}
 
+//	@Override
+//	public double getNetSalary() {
+//		
+//		
+//		
+//		return super.getNetSalary();
+//	}
+
+	
 	
 }
