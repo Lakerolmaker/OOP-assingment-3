@@ -3,6 +3,12 @@ import java.util.ArrayList;
 import employees.*;
 
 public class ReusaxCorp {
+	
+	double directorsBenefit = 5000;
+
+	public void setDirectorsBenefit(double directorsBenefit) {
+		this.directorsBenefit = directorsBenefit;
+	}
 
 	private static ArrayList<Employee> comanyEmplyee = new ArrayList<Employee>();
 	
@@ -86,18 +92,18 @@ public class ReusaxCorp {
 		
 	}
 	
-	// TODO : check 
-	public static void setDirecotrBenefits() {
-		
-		for(int i = 0; i < comanyEmplyee.size(); i++) {
-			
-			if(comanyEmplyee.get(i).getClass().isInstance(Director.class)) {
-				
-			}
-			
-		}
-		
-	}
+//	 nono V
+//	public static void setDirecotrBenefits() {
+//		
+//		for(int i = 0; i < comanyEmplyee.size(); i++) {
+//			
+//			if(comanyEmplyee.get(i).getClass().isInstance(Director.class)) {
+//				
+//			}
+//			
+//		}
+//		
+//	}
 	
 	public static void getNumberOfEmployees() {
 		main.print(" --------------------------- " + "\n");

@@ -12,7 +12,7 @@ public class Director extends Manager{ //MAKE IT EXTEND manager?
 	
 	private String department; 
 
-	public Director(String id, String employeeName, double grossSalary, String department, String degree) {
+	public Director(String id, String employeeName, double grossSalary, String department, String degree, double directorsBenefit) {
 		super(id, employeeName, grossSalary, degree);
 	
 		this.directorsBenefit = directorsBenefit;//???
