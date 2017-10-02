@@ -1,13 +1,13 @@
+package employees;
 //package employees;
 
-public class RegularEmployee {
+public class Employee {
 	
 	private String id;
 	private String employeeName;
 	private double grossSalary;
 	
-	public RegularEmployee(String id, String employeeName, double grossSalary) {
-		super();
+	public Employee(String id, String employeeName, double grossSalary) {
 		this.id = id;
 		this.employeeName = employeeName;
 		this.grossSalary = grossSalary;
