@@ -80,9 +80,7 @@ public class menu {
         			
         			sleep(100);
         			
-        			
-        			
-		
+
 				}
 		
 				sleep(2000);
