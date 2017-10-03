@@ -8,13 +8,16 @@ public class Director extends Manager{ //MAKE IT EXTEND manager?
 	private String employeeName;
 	private double grossSalary;
 	
+	private double newGrossSalary;
+	
 	private double directorsBenefit; //where do we get it from. its the same for all users so maybe not put it in parameters
 	
 	private String department; 
 
 	public Director(String id, String employeeName, double grossSalary, String department, String degree, double directorsBenefit) {
 		super(id, employeeName, grossSalary, degree);
-	
+		
+		this.newGrossSalary = grossSalary + directorsBenefit; //???
 		this.directorsBenefit = directorsBenefit;//???
 		this.department = department;
 		
@@ -24,7 +27,10 @@ public class Director extends Manager{ //MAKE IT EXTEND manager?
 		return directorsBenefit;
 	}
 	
-	
+	@Override
+	public double getGrossSalary() {
+		return newGrossSalary;
+	}
 
 	@Override
 	public double getNetSalary() {
@@ -36,13 +42,13 @@ public class Director extends Manager{ //MAKE IT EXTEND manager?
 		double lowIncomeTax = 0.2;
 		double highIncomeTax = 0.4;
 		
-		if(grossSalary < lowIncome) {
+		if(newGrossSalary < lowIncome) {//??
 			netSalary = super.getNetSalary();
-		} else if (grossSalary >= lowIncome && grossSalary < highIncome) {
-			netSalary = grossSalary - (grossSalary * lowIncomeTax);
+		} else if (newGrossSalary >= lowIncome && newGrossSalary < highIncome) {
+			netSalary = newGrossSalary - (newGrossSalary * lowIncomeTax);
 		} else {
-			double remainingGross = grossSalary - lowIncome;
-			netSalary = grossSalary - (lowIncome * lowIncomeTax) - (remainingGross * highIncomeTax);
+			double remainingGross = newGrossSalary - lowIncome;
+			netSalary = newGrossSalary - (lowIncome * lowIncomeTax) - (remainingGross * highIncomeTax);
 		}
 		
 		return netSalary;

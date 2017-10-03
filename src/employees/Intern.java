@@ -1,49 +1,55 @@
 package employees;
 
-public class Intern extends Employee{
-	//NEED?? VVVV
+public class Intern extends Employee {
+	// NEED?? VVVV
 	private String id;
 	private String employeeName;
 	private double grossSalary;
-	
+
+	private double newGrossSalary;
+
 	private int gpa;
-	
+
 	public Intern(String id, String employeeName, double grossSalary, int gpa) {
 		super(id, employeeName, grossSalary);
-		
+
 		this.gpa = gpa;
-	
+		
+		this.newGrossSalary = getGrossSalary(); //??
+
 	}
 	
 	public int getGpa() {
 		return gpa;
 	}
+
 	public void setGpa(int gpa) {
 		this.gpa = gpa;
 	}
 
 	public double getGrossSalary() {
-		if(gpa >= 0 && gpa <= 10){
-			if(gpa <= 5) {
-				grossSalary = 0; //??
-			}
-			if(gpa  > 5 && gpa < 8) {
-				grossSalary = grossSalary;
-			}
-			if(gpa >= 8) {
-				int bonus = 1000;
-				grossSalary = grossSalary + bonus;
-			}
+		if (gpa <= 5) { // have this.getgpa() instead?
+			newGrossSalary = 0; 
+			return newGrossSalary;
+		} else if (gpa > 5 && gpa < 8) {
+			newGrossSalary = grossSalary;
+			return newGrossSalary;
+		} else if (gpa >= 8) {
+			int bonus = 1000;
+			newGrossSalary = grossSalary + bonus;
+			return newGrossSalary;
+		} else {
+			System.out.println("That is not a valid gpa");
+			return 0; //?????
 		}
-		return grossSalary;
+
 	}
 
 	@Override
 	public double getNetSalary() {
-		
-		//DONT NEED FOR INTERN MAYBE
-		
-		return super.getNetSalary();
-	}
 
+		double netSalary = this.getGrossSalary(); //??
+
+		return netSalary;
+	}
 }
