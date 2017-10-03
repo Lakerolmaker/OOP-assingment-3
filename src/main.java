@@ -145,6 +145,48 @@ public class main {
 			ReusaxCorp.printAllEmployees();
 			
 			break;
+			case (3):
+
+				//TODO
+			
+
+				break;		
+			case (4):
+
+				//TODO
+			
+
+				break;
+			case (5):
+
+				//TODO
+			
+
+				break;
+			case (6):
+
+				//TODO
+			
+
+				break;
+			case (7):
+
+				//TODO
+			
+
+				break;
+			case (8):
+
+				//TODO
+			
+
+				break;
+			case (9):
+
+				//TODO
+			
+
+				break;
 			case(10):
 			
 			//: Exits the program
