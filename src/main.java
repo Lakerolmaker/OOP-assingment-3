@@ -206,6 +206,12 @@ public class main {
 			break;
 			default:
 				
+					print( "\n" +
+			    	 	" ------------------------------------ "	+ "\n" +
+			    	 	" |    Error , Not a valid option    | " + "\n" +
+			        " ------------------------------------ "	+ "\n" + "\n") ;
+				
+				
 				
 			break;
 			

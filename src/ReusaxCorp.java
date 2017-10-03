@@ -139,19 +139,20 @@ public class ReusaxCorp {
 	}
 	
 	public static void printAllEmployees() {
-		main.print("hello");
+	
 		
 		for(int i = 0; i < companyEmployee.size(); i++) {
 						
 			EmployeeDefinition castemployee = (EmployeeDefinition)companyEmployee.get(i);
 			
 			//: prints the user to the console
-			main.print(" --------------------------- " + "\n");
+			main.print("\n");
+			main.print("\n" + " --------------------------- " + "\n");
 			main.print(" ID : " + castemployee.getId() + "\n");
 			main.print(" Name : " + castemployee.getEmployeeName() + "\n");
 			main.print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
 			main.print(" Net Salary : " + castemployee.getNetSalary() + "\n");
-			main.print(" --------------------------- " + "\n" + "\n");
+			main.print("\n");
 				
 		}
 		
@@ -175,7 +176,7 @@ public class ReusaxCorp {
 	
 	public static void getNumberOfEmployees() {
 		main.print(" --------------------------- " + "\n");
-		main.print("Number of employees : " + companyEmployee.size());
+		main.print(" Number of employees : " + companyEmployee.size());
 		main.print(" --------------------------- " + "\n");
 	
 	}
