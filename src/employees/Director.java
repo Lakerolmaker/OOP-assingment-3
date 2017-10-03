@@ -27,6 +27,13 @@ public class Director extends Manager{ //MAKE IT EXTEND manager?
 		return directorsBenefit;
 	}
 	
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) { //SHOULD WE HAVE THIS?
+		this.department = department;
+	}
+	
 	@Override
 	public double getGrossSalary() {
 		return newGrossSalary;
