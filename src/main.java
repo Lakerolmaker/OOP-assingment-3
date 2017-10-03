@@ -50,7 +50,7 @@ public class main {
 			switch(input) {
 
 			case(1):
-								
+				//Create an employee				
 				System.out.println("Enter the position of the employee: (Available: Regular, Inter, Manager, Director.");
 				String employeePosition = sc.next();
 				if(employeePosition.equals("Regular")) {
@@ -141,48 +141,61 @@ public class main {
 		
 			break;
 			case(2):
-				
-			ReusaxCorp.printAllEmployees();
+				//Print all employees
+				ReusaxCorp.printAllEmployees();
 			
 			break;
 			case (3):
+<<<<<<< HEAD
 
 				
 				ReusaxCorp.Sort();
+=======
+				//Print specific employee
+				System.out.println("Enter the ID of the person whose info you want to print: ");
+				String id = sc.next();
+				ReusaxCorp.printEmployee(id);
+>>>>>>> f7cdbcd36ed9b9ca229d288a68ec34d3f6ee445f
 
 				break;		
 			case (4):
-
-				//TODO
+				//Remove employee	
+				System.out.println("Enter the ID of the person who you want to remove: ");
+				id = sc.next(); //??
+				ReusaxCorp.removeEmployee(id);
 			
 
 				break;
 			case (5):
-
-				//TODO
+				//Update an employee
+				System.out.println("Enter the ID of the employee you want to update:");
+				id = sc.next();
+				ReusaxCorp.updateEmployee(id);
 			
 
 				break;
 			case (6):
-
-				//TODO
-			
+				//Set directors benefit
+				System.out.println("Enter the new directors benefit: ");
+			    double amount = sc.nextDouble();
+				ReusaxCorp.setDirectorBenefits(amount);
+				System.out.println("Success! New directorsbenefit set to: " + amount);
 
 				break;
 			case (7):
-
+				//Print total expenses
 				//TODO
 			
 
 				break;
 			case (8):
-
+				//??? what for??
 				//TODO
 			
 
 				break;
 			case (9):
-
+				//??? what for??
 				//TODO
 			
 
