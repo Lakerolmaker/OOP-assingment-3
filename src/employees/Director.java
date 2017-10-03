@@ -13,14 +13,17 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	private double directorsBenefit; //where do we get it from. its the same for all users so maybe not put it in parameters
 	
 	private String department; 
+	
+	private String classification = "Director";
 
-	public Director(String id, String employeeName, double grossSalary, String department, String degree, double directorsBenefit) {
-		super(id, employeeName, grossSalary, degree);
+	public Director(String id, String employeeName, double grossSalary, String department, String degree, double directorsBenefit, String classification) {
+		super(id, employeeName, grossSalary, degree, classification);
 		
 		this.newGrossSalary = grossSalary + directorsBenefit; //???
 		this.directorsBenefit = directorsBenefit;//???
 		this.department = department;
 		
+		this.classification = classification;
 	}
 	
 	public double getDirectorsBenefit() {
