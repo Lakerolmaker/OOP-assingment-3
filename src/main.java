@@ -164,8 +164,8 @@ public class main {
 
 				break;
 			case (6):
-
-				//TODO
+				//Set directors benefit
+				
 			
 
 				break;

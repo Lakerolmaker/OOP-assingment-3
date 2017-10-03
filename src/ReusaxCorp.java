@@ -5,8 +5,6 @@ import employees.*;
 public class ReusaxCorp {
 		
 
-	
-
 	private static ArrayList<Object> companyEmployee =  new ArrayList<Object>();
 	
 	
