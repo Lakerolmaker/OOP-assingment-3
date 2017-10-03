@@ -162,7 +162,9 @@ public class main {
 				break;
 			case (5):
 				//Update an employee
-				
+				System.out.println("Enter the ID of the employee you want to update:");
+				id = sc.next();
+				ReusaxCorp.updateEmployee(id);
 			
 
 				break;
