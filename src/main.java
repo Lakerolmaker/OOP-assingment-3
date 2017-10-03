@@ -168,8 +168,10 @@ public class main {
 				//Update an employee
 				System.out.println("Enter the ID of the employee you want to update:");
 				id = sc.next();
-				ReusaxCorp.updateEmployee(id);
+				System.out.println("Enter what you want to change: "); //??
+				ReusaxCorp.updateEmployee(id); //?? add parameters int userinput
 			
+				
 
 				break;
 			case (6):
