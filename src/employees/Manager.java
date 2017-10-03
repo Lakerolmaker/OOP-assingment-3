@@ -1,10 +1,6 @@
 package employees;
 
 public class Manager extends Employee implements EmployeeDefinition{
-	//need???
-	private String id;
-	private String employeeName;
-	private double grossSalary;
 	
 	private double grossSalaryPlusBonus;
 	
@@ -17,10 +13,9 @@ public class Manager extends Employee implements EmployeeDefinition{
 	public Manager(String id, String employeeName, double grossSalary, String degree) {
 		super(id, employeeName, grossSalary);
 		
-		this.grossSalaryPlusBonus = grossSalary + bonus; //????? should the bonus be added to the salary
-	
 		this.degree = degree;
-		this.bonus = getManagerBonus();//????
+		this.bonus = getManagerBonus();
+		this.grossSalaryPlusBonus = grossSalary + bonus; 
 		
 	}
 
@@ -37,13 +32,13 @@ public class Manager extends Employee implements EmployeeDefinition{
 	
 	public double getManagerBonus() {
 		if(degree.equals("BSc.")) {
-			bonus = grossSalary * 0.1;
+			bonus = super.getGrossSalary() * 0.1;
 			return bonus;
 		}else if(degree.equals("MSc.")) {
-			bonus = grossSalary * 0.2;
+			bonus = super.getGrossSalary() * 0.2;
 			return bonus;
 		}else if(degree.equals("PhD")) {
-			bonus = grossSalary * 0.35;
+			bonus = super.getGrossSalary() * 0.35;
 			return bonus;
 		}else {
 			System.out.println("That's not a valid degree");
@@ -51,44 +46,21 @@ public class Manager extends Employee implements EmployeeDefinition{
 		}
 		
 	}
+	
+	@Override
+	public String getClassification() {
+		return this.classification;
+	}
 
-//	@Override
-//	public String getEmployeeName() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public void setEmployeeName(String employeeName) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void setGrossSalary(double grossSalary) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public String getId() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public double getNetSalary() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-// SHOULD MANAGER PAY TAXES ON THE BONUS? IF SO WE NEED TO OVERRIDE THE GETNETSALARY IN THIS CLASS
-//	@Override
-//	public double getNetSalary() {
-//		
-//		
-//		
-//		return super.getNetSalary();
-//	}
+	@Override
+	public String toString() {
+		return "Manager id=" + super.getId() + ", employeeName=" + super.getEmployeeName() + ", grossSalary=" + super.getGrossSalary()
+				+ ", grossSalaryPlusBonus=" + this.grossSalaryPlusBonus + ", degree=" + this.degree + ", bonus=" + this.bonus
+				+ ", classification=" + this.classification;
+	}
+	
+	
+	
 
 	
 	

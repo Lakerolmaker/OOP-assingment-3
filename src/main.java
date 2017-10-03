@@ -92,21 +92,19 @@ public class main {
 					
 				}else if(employeePosition.equals("Manager")) {
 					System.out.print("Enter the ID of the new manager: ");
-					String eompoyeeId = sc.next();
-					Manager createdEmpoyee = new Manager(eompoyeeId, "", 0.0, "");
+					String employeeID = sc.next();
+					
 
 					System.out.print("Enter the name of the new manager: ");
 					String employeeName = sc.next();
-					createdEmpoyee.setEmployeeName(employeeName);
 
 					System.out.print("Enter the gross salary of the new manager: ");
 					double employeesalary = sc.nextDouble();
-					createdEmpoyee.setGrossSalary(employeesalary);
 					
 					System.out.print("Enter the degree of the new manager: ");
 					String degree = sc.next();
-					createdEmpoyee.setDegree(degree);
 
+					Manager createdEmpoyee = new Manager(employeeID, employeeName, employeesalary, degree);
 					ReusaxCorp.registerEmployee(createdEmpoyee); //WHAT TO DO WITH THESE??
 					
 				}else if(employeePosition.equals("Director")) {
@@ -156,7 +154,7 @@ public class main {
 
 
 				break;		
-			case (4):
+				case (4):
 				//Remove employee	
 				System.out.println("Enter the ID of the person who you want to remove: ");
 				id = sc.next(); //??
@@ -164,7 +162,7 @@ public class main {
 			
 
 				break;
-			case (5):
+				case (5):
 						//Update an employee
 						System.out.println("Enter the ID of the employee you want to update:");
 						String idChange = sc.next();
@@ -189,33 +187,49 @@ public class main {
 							ReusaxCorp.updateEmployee(idChange, 2, grossSalary);
 
 						} else if (userInp == 3) {
-							/*
-							// set specific things tex degree, department osv
-							if (castemployee.getClassification().equals("Director")) {
+							
+							System.out.println("Who would you like to change: ");
+							System.out.println("1. Director ");
+							System.out.println("2. Manager ");
+							System.out.println("3. Intern");
+							
+							int SpecifiedScan = sc.nextInt();
+							
+							if (SpecifiedScan == 1) {
 								// companyEmployee= new Director(companyEmployee);
 								System.out.println("Select what you want to change for this director: ");
 								System.out.println("1. Change degree");
 								System.out.println("2. Change department");
+							
+								int DirectorScan = sc.nextInt();
+								
+								if(DirectorScan == 1) {
+									System.out.println("Input new degree  : ");
+									Scanner degreeScan = new Scanner(System.in);
+									String degreeInput = degreeScan.nextLine();
+									ReusaxCorp.updateEmployee(idChange, 3, degreeInput);
+									
+								}else if(DirectorScan == 2) {
+									System.out.println("Input new department : ");
+									Scanner depertmentScan = new Scanner(System.in);
+									String depertmentInput = depertmentScan.nextLine();
+									ReusaxCorp.updateEmployee(idChange, 4, depertmentInput);
+									
+									
+								}
+								
 
-							} else if (castemployee.getClassification().equals("Manager")) {
+							} else if (SpecifiedScan == 2) {
 								System.out.println("Select what you want to change for this manager: ");
 								System.out.println("1. Change degree");
 
-							} else if (castemployee.getClassification().equals("Intern")) {
+							} else if (SpecifiedScan == 3) {
 
 								System.out.println("Select what you want to change for this intern: ");
 								System.out.println("1. Change GPA");
-								userInp = scanner.nextInt();
-								if (userInp == 1) {
-									System.out.println("Please enter new GPA: ");
-									int gpa = scanner.nextInt();
-
-									((Intern) castemployee).setGpa(gpa);
-									castemployee = (Intern) companyEmployee.get(i);
-									// castemployee.setGpa(newGpa);
-								}
+								
 							}
-*/
+
 						} else if (userInp == 4) {
 							// PROMOTE/DEMOTE
 						} else {

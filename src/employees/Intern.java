@@ -54,4 +54,18 @@ public class Intern extends Employee implements EmployeeDefinition{
 
 		return netSalary;
 	}
+
+	@Override
+	public String getClassification() {
+		return this.classification;
+	}
+	
+	@Override
+	public String toString() {
+		return "Intern id=" + id + ", employeeName=" + employeeName + ", grossSalary=" + grossSalary
+				+ ", newGrossSalary=" + newGrossSalary + ", classification=" + classification + ", gpa=" + gpa;
+	}
+	
+	
+	
 }

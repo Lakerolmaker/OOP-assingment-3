@@ -83,6 +83,7 @@ public class menu {
 				}
 		
 		 sleep(2000);
+		 main.cls();
 	}
 	
 	

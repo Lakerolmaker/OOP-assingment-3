@@ -7,9 +7,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	private String id;
 	private String employeeName;
 	private double grossSalary;
-	
 	private double newGrossSalary;
-	
 	private String classification = "Director";
 	
 	//: So it´s the same
@@ -69,9 +67,19 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 		
 	}
 	
+	@Override
+	public String getClassification() {
+		return this.classification;
+	}
 
+	@Override
+	public String toString() {
+		return "Director id=" + this.id + ", employeeName=" + this.employeeName + ", grossSalary=" + this.grossSalary
+				+ ", newGrossSalary=" + this.newGrossSalary + ", classification=" + this.classification + ", department="
+				+ this.department;
+	}
 
-
+	
 	
 
 }
