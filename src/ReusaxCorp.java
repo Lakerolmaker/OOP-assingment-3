@@ -4,18 +4,19 @@ import employees.*;
 
 public class ReusaxCorp {
 		
-	double directorsBenefit = 5000;
-	public double setDirectorsBenefit(double directorsBenefit) {
-		this.directorsBenefit = directorsBenefit;
+	static double directorsBenefit = 5000;
+	public static double setDirectorsBenefit(double directorsBenefits) {
+		directorsBenefit = directorsBenefits;
 		return directorsBenefit;
 	}
 
-	public double getDirectorsBenefit() {
+	public static double getDirectorsBenefit() {
 		return directorsBenefit;
 	}
+	
+	Object helo = "";
 
-
-	private static ArrayList<Employee> companyEmployee =  new ArrayList<Employee>();
+	private static ArrayList<Object> companyEmployee =  new ArrayList<Object>();
 	
 	
 	
@@ -64,14 +65,16 @@ public class ReusaxCorp {
 		
 		for(int i = 0; i < companyEmployee.size(); i++) {
 			
-			if(companyEmployee.get(i).getEmployeeName().equals(id)) {
+			if(companyEmployee.get(i) instanceof EmployeeDefinition) {
+				
+			EmployeeDefinition castemployee = (EmployeeDefinition)companyEmployee.get(i);
 			
 			//: prints the user to the console
 			main.print(" --------------------------- " + "\n");
-			main.print(" ID : " + companyEmployee.get(i).getId() + "\n");
-			main.print(" Name : " + companyEmployee.get(i).getEmployeeName() + "\n");
-			main.print(" Gross Salary : " + companyEmployee.get(i).getGrossSalary() + "\n");
-			main.print(" Net Salary : " + companyEmployee.get(i).getNetSalary() + "\n");
+			main.print(" ID : " + castemployee.getId() + "\n");
+			main.print(" Name : " + castemployee.getEmployeeName() + "\n");
+			main.print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
+			main.print(" Net Salary : " + castemployee.getNetSalary() + "\n");
 			main.print(" --------------------------- " + "\n" + "\n");
 			return;
 			
@@ -139,9 +142,10 @@ public class ReusaxCorp {
 	
 	//: Sorting algorith
 	public static void SortAlfabeticaly() {
-		
-		
-		
+			
 	}
+	
+	
+	
 	
 }
