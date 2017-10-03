@@ -146,16 +146,14 @@ public class main {
 			
 			break;
 			case (3):
-<<<<<<< HEAD
-
 				
 				ReusaxCorp.Sort();
-=======
+
 				//Print specific employee
 				System.out.println("Enter the ID of the person whose info you want to print: ");
 				String id = sc.next();
 				ReusaxCorp.printEmployee(id);
->>>>>>> f7cdbcd36ed9b9ca229d288a68ec34d3f6ee445f
+
 
 				break;		
 			case (4):

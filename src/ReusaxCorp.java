@@ -1,22 +1,16 @@
 import java.awt.List;
 import java.util.ArrayList;
-<<<<<<< HEAD
+
 import java.util.Collections;
-=======
 import java.util.Scanner;
->>>>>>> f7cdbcd36ed9b9ca229d288a68ec34d3f6ee445f
 
 import employees.*;
 import javafx.collections.ListChangeListener.Change;
 
 public class ReusaxCorp {
-<<<<<<< HEAD
+
 
 	//: holds all employees
-=======
-		
-
->>>>>>> f7cdbcd36ed9b9ca229d288a68ec34d3f6ee445f
 	private static ArrayList<Object> companyEmployee =  new ArrayList<Object>();
 	
 	
