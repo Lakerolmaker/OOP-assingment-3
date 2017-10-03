@@ -218,6 +218,16 @@ public class main {
 */
 						} else if (userInp == 4) {
 							// PROMOTE/DEMOTE
+							System.out.println("Enter the new position of the employee:");
+							System.out.println("1. Director");
+							System.out.println("2. Manager");
+							System.out.println("3. Intern");
+							System.out.println("4. Employee (regular)");
+							int promoteDemote = sc.nextInt(); //so if this is tex3 we demote it to intern
+							
+							ReusaxCorp.updateEmployee(idChange, 4, promoteDemote);
+							
+							
 						} else {
 							System.out.println("Employee by that name not found, or wrong user input.");// chnage this
 						}

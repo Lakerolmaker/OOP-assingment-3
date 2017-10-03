@@ -36,7 +36,7 @@ public class ReusaxCorp {
 
 	public static void updateEmployee(String id , int choice , Object Change ) {
 
-		if(choice == 1){
+		if(choice == 1){ //CHANGE THE NAME
 			
 			for (int i = 0; i < companyEmployee.size(); i++) {
 
@@ -69,7 +69,7 @@ public class ReusaxCorp {
 			}
 			
 			
-		}else if(choice == 2) {
+		}else if(choice == 2) {//CHANGE THE SALARY
 			
 			for (int i = 0; i < companyEmployee.size(); i++) {
 
@@ -107,8 +107,36 @@ public class ReusaxCorp {
 			
 			
 			
+		}else if(choice == 4) {
+			
+			for (int i = 0; i < companyEmployee.size(); i++) {
+
+				EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+
+				if (castemployee.getId().equals(id)) {
+					
+					int userInput = (int)Change;
+					
+					upDownCast(castemployee, userInput); //????
+					
+				}
+				
+			}
+			
 		}
 		
+	}
+	
+	public static void upDownCast(EmployeeDefinition castEmployee, int userInput) { //OR make it take string id or something else??
+		if(userInput == 1) {
+			promoteToDirector(castEmployee);
+		}else if(userInput == 2) {
+			promoteToMananger(castEmployee);
+		}else if(userInput == 3) {
+			promoteToIntern(castEmployee);
+		}else if(userInput == 4) {
+			promoteToEmployee(castEmployee);
+		}
 	}
 
 	public static void getTotallExpences(String id) {
@@ -196,19 +224,26 @@ public class ReusaxCorp {
 
 	// : promote methods
 
-	public static void promoteToEmployee() {
+	public static void promoteToEmployee(EmployeeDefinition castEmployee) {
+
+		castEmployee = ((Employee)castEmployee); //???
+		
+	}
+
+	public static void promoteToIntern(EmployeeDefinition castEmployee) {
+		
+		castEmployee = ((Intern)castEmployee);
+	}
+
+	public static void promoteToMananger(EmployeeDefinition castEmployee) {
+		
+		castEmployee = ((Manager)castEmployee);
 
 	}
 
-	public static void promoteToDIntern() {
-
-	}
-
-	public static void promoteToMananger() {
-
-	}
-
-	public static void promoteToDirector() {
+	public static void promoteToDirector(EmployeeDefinition castEmployee) {
+		
+		castEmployee = ((Director)castEmployee);
 
 	}
 
