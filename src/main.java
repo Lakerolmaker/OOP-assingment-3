@@ -179,15 +179,17 @@ public class main {
 
 						if (userInp == 1) {
 							System.out.println("Enter the new name of the employee: ");
-							String employeeName = sc.nextLine();
-							ReusaxCorp.updateEmployee(id, 1, employeeName);
+							Scanner nameScanner = new Scanner(System.in);
+							String employeeName = nameScanner.nextLine();
+							ReusaxCorp.updateEmployee(idChange, 1, employeeName);
 							
 						} else if (userInp == 2) {
 							System.out.println("Enter the new salary of the employee: ");
-							double grossSalary = scanner.nextDouble();
-							castemployee.setGrossSalary(grossSalary);
+							double grossSalary = sc.nextDouble();
+							ReusaxCorp.updateEmployee(idChange, 2, grossSalary);
 
 						} else if (userInp == 3) {
+							/*
 							// set specific things tex degree, department osv
 							if (castemployee.getClassification().equals("Director")) {
 								// companyEmployee= new Director(companyEmployee);
@@ -213,7 +215,7 @@ public class main {
 									// castemployee.setGpa(newGpa);
 								}
 							}
-
+*/
 						} else if (userInp == 4) {
 							// PROMOTE/DEMOTE
 						} else {

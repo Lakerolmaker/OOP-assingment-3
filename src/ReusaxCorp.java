@@ -34,7 +34,7 @@ public class ReusaxCorp {
 
 	}
 
-	public static void updateEmployee(String id , int choice , String Change ) {
+	public static void updateEmployee(String id , int choice , Object Change ) {
 
 		if(choice == 1){
 			
@@ -46,29 +46,65 @@ public class ReusaxCorp {
 					
 					if (companyEmployee.get(i) instanceof Employee) {
 						Employee UpdatedCast = (Employee)companyEmployee.get(i);
-						UpdatedCast.setEmployeeName(Change);
+						UpdatedCast.setEmployeeName(Change.toString());
 						companyEmployee.set(i, UpdatedCast);
 						
 					}else if(companyEmployee.get(i) instanceof Intern) {
 						Intern UpdatedCast = (Intern)companyEmployee.get(i);
-						UpdatedCast.setEmployeeName(Change);
+						UpdatedCast.setEmployeeName(Change.toString());
 						companyEmployee.set(i, UpdatedCast);
 						
 					}else if(companyEmployee.get(i) instanceof Manager) {
 						Manager UpdatedCast = (Manager)companyEmployee.get(i);
-						UpdatedCast.setEmployeeName(Change);
+						UpdatedCast.setEmployeeName(Change.toString());
 						companyEmployee.set(i, UpdatedCast);
 						
 					}else if(companyEmployee.get(i) instanceof Director) {
 						Director UpdatedCast = (Director)companyEmployee.get(i);
-						UpdatedCast.setEmployeeName(Change);
+						UpdatedCast.setEmployeeName(Change.toString());
 						companyEmployee.set(i, UpdatedCast);
 					}
-					
-									
-					
 				}
+				
 			}
+			
+			
+		}else if(choice == 2) {
+			
+			for (int i = 0; i < companyEmployee.size(); i++) {
+
+				EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+
+				if (castemployee.getId().equals(id)) {
+					
+					if (companyEmployee.get(i) instanceof Employee) {
+						Employee UpdatedCast = (Employee)companyEmployee.get(i);
+						UpdatedCast.setGrossSalary((Double)Change);
+						companyEmployee.set(i, UpdatedCast);
+						
+					}else if(companyEmployee.get(i) instanceof Intern) {
+						Intern UpdatedCast = (Intern)companyEmployee.get(i);
+						UpdatedCast.setGrossSalary((Double)Change);
+						companyEmployee.set(i, UpdatedCast);
+						
+					}else if(companyEmployee.get(i) instanceof Manager) {
+						Manager UpdatedCast = (Manager)companyEmployee.get(i);
+						UpdatedCast.setGrossSalary((Double)Change);
+						companyEmployee.set(i, UpdatedCast);
+						
+					}else if(companyEmployee.get(i) instanceof Director) {
+						Director UpdatedCast = (Director)companyEmployee.get(i);
+						UpdatedCast.setGrossSalary((Double)Change);
+						companyEmployee.set(i, UpdatedCast);
+					}
+				}
+				
+			}
+			
+				
+		}else if(choice == 3) {
+			
+			
 			
 			
 		}
@@ -126,10 +162,13 @@ public class ReusaxCorp {
 			main.print(" Name : " + castemployee.getEmployeeName() + "\n");
 			main.print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
 			main.print(" Net Salary : " + castemployee.getNetSalary() + "\n");
-			main.print("\n");
+			
 
 		}
-
+		
+		main.print(" --------------------------- " + "\n");
+		main.print("\n");
+		
 	}
 
 	// TODO : check
