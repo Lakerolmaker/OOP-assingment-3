@@ -7,14 +7,17 @@ public class Intern extends Employee implements EmployeeDefinition{
 	private double grossSalary;
 
 	private double newGrossSalary;
+	
+	private String classification = "Intern";
 
 	private int gpa;
 
-	public Intern(String id, String employeeName, double grossSalary, int gpa) {
-		super(id, employeeName, grossSalary);
+	public Intern(String id, String employeeName, double grossSalary, int gpa, String classification) {
+		super(id, employeeName, grossSalary, classification);
 
 		this.gpa = gpa;
 		
+		this.classification = classification;
 		this.newGrossSalary = getGrossSalary(); //??
 
 	}

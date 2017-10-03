@@ -7,7 +7,9 @@ public class Employee implements EmployeeDefinition{
 	private String employeeName;
 	private double grossSalary;
 	
-	public Employee(String id, String employeeName, double grossSalary) {
+	private String classification = "Employee";
+	
+	public Employee(String id, String employeeName, double grossSalary, String classification) {
 		this.id = id;
 		this.employeeName = employeeName;
 		this.grossSalary = grossSalary;
@@ -43,6 +45,12 @@ public class Employee implements EmployeeDefinition{
 	@Override
 	public String toString() {
 		return "Employee id: " + id + ", employee name: " + employeeName + ", gross salary: " + grossSalary + "]";
+	}
+
+	@Override
+	public String getClassification() {
+		
+		return this.classification;
 	}
 	
 

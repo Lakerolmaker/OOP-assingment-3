@@ -13,5 +13,7 @@ public interface EmployeeDefinition {
 	public String getId();
 	
 	public double getNetSalary();
+	
+	public String getClassification();
 
 }
