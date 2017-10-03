@@ -10,6 +10,11 @@ public class ReusaxCorp {
 		return directorsBenefit;
 	}
 
+	public double getDirectorsBenefit() {
+		return directorsBenefit;
+	}
+
+
 	private static ArrayList<Employee> companyEmployee =  new ArrayList<Employee>();
 	
 	
