@@ -31,7 +31,9 @@ public class ReusaxCorp {
 	}
 	
 	public static void updateEmployee(String id) {
-		
+		System.out.println("Enter the ID of the employee you want to update:");
+	//	String id = id;
+	//	if(id.equals(anObject))
 	}
 	
 	public static void getTotallExpences(String id) {

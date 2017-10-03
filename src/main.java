@@ -142,24 +142,29 @@ public class main {
 			break;
 			case(2):
 				
-			ReusaxCorp.printAllEmployees();
+				ReusaxCorp.printAllEmployees();
 			
 			break;
 			case (3):
 
 				//TODO
-			
+				System.out.println("Enter the ID of the person whose info you want to print: ");
+				String id = sc.next();
+				ReusaxCorp.printEmployee(id);
 
 				break;		
 			case (4):
 
 				//TODO
+				System.out.println("Enter the ID of the person who you want to remove: ");
+				id = sc.next(); //??
+				ReusaxCorp.removeEmployee(id);
 			
 
 				break;
 			case (5):
-
-				//TODO
+				//Update an employee
+				
 			
 
 				break;
