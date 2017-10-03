@@ -133,35 +133,38 @@ public class ReusaxCorp {
 		}else if(choice == 5) {
 			
 		}else if(choice == 4) {
+					
+			Employee castemployee;
 			
-			for (int i = 0; i < companyEmployee.size(); i++) {
+			upDownCast(id, castemployee, (int)Change);
+			
+		}
+		
+	}
+	
+	public static void upDownCast(String id, EmployeeDefinition castEmployee, int userInput) { //OR make it take string id or something else??
+		
+		for (int i = 0; i < companyEmployee.size(); i++) {
 
-				EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+			castEmployee = (EmployeeDefinition) companyEmployee.get(i);
 
-				if (castemployee.getId().equals(id)) {
-					
-					int userInput = (int)Change;
-					
-					upDownCast(castemployee, userInput); //????
-					
+			if (castEmployee.getId().equals(id)) {
+				
+				if(userInput == 1) {
+					promoteToDirector(castEmployee);
+				}else if(userInput == 2) {
+					promoteToMananger(castEmployee);
+				}else if(userInput == 3) {
+					promoteToIntern(castEmployee);
+				}else if(userInput == 4) {
+					promoteToEmployee(castEmployee);
 				}
 				
 			}
 			
 		}
 		
-	}
-	
-	public static void upDownCast(EmployeeDefinition castEmployee, int userInput) { //OR make it take string id or something else??
-		if(userInput == 1) {
-			promoteToDirector(castEmployee);
-		}else if(userInput == 2) {
-			promoteToMananger(castEmployee);
-		}else if(userInput == 3) {
-			promoteToIntern(castEmployee);
-		}else if(userInput == 4) {
-			promoteToEmployee(castEmployee);
-		}
+		
 	}
 
 	public static void getTotallExpences(String id) {
