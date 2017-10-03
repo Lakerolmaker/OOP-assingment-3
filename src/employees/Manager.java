@@ -14,11 +14,11 @@ public class Manager extends Employee implements EmployeeDefinition{
 	
 	private String classification = "Manager";
 	
-	public Manager(String id, String employeeName, double grossSalary, String degree, String classification) {
-		super(id, employeeName, grossSalary, classification);
+	public Manager(String id, String employeeName, double grossSalary, String degree) {
+		super(id, employeeName, grossSalary);
 		
 		this.grossSalaryPlusBonus = grossSalary + bonus; //????? should the bonus be added to the salary
-		this.classification = classification;
+	
 		this.degree = degree;
 		this.bonus = getManagerBonus();//????
 		

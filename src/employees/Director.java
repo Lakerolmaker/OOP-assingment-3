@@ -10,6 +10,8 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	private double newGrossSalary;
 	
+	private String classification = "Director";
+	
 	//: So it´s the same
 	private static double directorsBenefit; //where do we get it from. its the same for all users so maybe not put it in parameters
 	

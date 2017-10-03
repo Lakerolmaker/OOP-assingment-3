@@ -9,7 +9,7 @@ public class Employee implements EmployeeDefinition{
 	
 	private String classification = "Employee";
 	
-	public Employee(String id, String employeeName, double grossSalary, String classification) {
+	public Employee(String id, String employeeName, double grossSalary) {
 		this.id = id;
 		this.employeeName = employeeName;
 		this.grossSalary = grossSalary;
