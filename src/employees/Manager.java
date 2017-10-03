@@ -50,35 +50,35 @@ public class Manager extends Employee implements EmployeeDefinition{
 		
 	}
 
-	@Override
-	public String getEmployeeName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setEmployeeName(String employeeName) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setGrossSalary(double grossSalary) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public double getNetSalary() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+//	@Override
+//	public String getEmployeeName() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public void setEmployeeName(String employeeName) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void setGrossSalary(double grossSalary) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public String getId() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public double getNetSalary() {
+//		// TODO Auto-generated method stub
+//		return 0;
+//	}
 // SHOULD MANAGER PAY TAXES ON THE BONUS? IF SO WE NEED TO OVERRIDE THE GETNETSALARY IN THIS CLASS
 //	@Override
 //	public double getNetSalary() {
