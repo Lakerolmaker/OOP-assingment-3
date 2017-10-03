@@ -1,14 +1,13 @@
 import java.awt.List;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import employees.*;
 
 public class ReusaxCorp {
-		
 
-	
-
+	//: holds all employees
 	private static ArrayList<Object> companyEmployee =  new ArrayList<Object>();
-	
 	
 	
 	public static void registerEmployee(Employee newRecruit) {
@@ -90,8 +89,7 @@ public class ReusaxCorp {
 			main.print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
 			main.print(" Net Salary : " + castemployee.getNetSalary() + "\n");
 			main.print(" --------------------------- " + "\n" + "\n");
-			
-			
+				
 		}
 		
 	}
@@ -139,14 +137,48 @@ public class ReusaxCorp {
 	}
 	
 	//: Sorting algorith
-	public static void SortAlfabeticaly() {
+	public static void Sort() {
 			
-		//companyEmployee.
-		//
+	for(int i = 0; i < companyEmployee.size(); i++) {
+
+		for(int z = i; z < companyEmployee.size(); z++) {
+			
+			//: Gets the name of the employees
+			String compare1 = ((EmployeeDefinition)companyEmployee.get(i)).getEmployeeName().toString();
+			String compare2 = ((EmployeeDefinition)companyEmployee.get(z)).getEmployeeName().toString();
+
+			//: compares the two
+			int compare = compare1.compareTo(compare2);
+			if (compare < 0){
+				//: If a is compare1 is bigger than compare2
+			    //: Does nothing and moves on
+			}else if (compare > 0) {
+				//: If a is compare2 is bigger than compare1
+			    //: Swaps the elements
+				Collections.swap(companyEmployee, i, z);
+			}else {
+				//: If a is compare1 is the same as compare2
+			    //: Checks the gross income
+			    
+				//: Gets the name of the employees
+				double compareInt1 = ((EmployeeDefinition)companyEmployee.get(i)).getGrossSalary();
+				double compareInt2 = ((EmployeeDefinition)companyEmployee.get(z)).getGrossSalary();
+				
+				if(compareInt2 > compareInt1) {
+				     //: If a is compare2 is bigger than compare1
+					 //: Swaps the elements
+					Collections.swap(companyEmployee, i, z);
+				}
+				
+			}
+			
+				
+		}
+
 	}
 	
 	
-	
+}
 	
 	
 	

@@ -147,8 +147,8 @@ public class main {
 			break;
 			case (3):
 
-				//TODO
-			
+				
+				ReusaxCorp.Sort();
 
 				break;		
 			case (4):
