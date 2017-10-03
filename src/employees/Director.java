@@ -2,7 +2,7 @@ package employees;
 
 
 
-public class Director extends Manager{ //MAKE IT EXTEND manager?
+public class Director extends Manager implements EmployeeDefinition{ //MAKE IT EXTEND manager?
 	//need these attributes??
 	private String id;
 	private String employeeName;

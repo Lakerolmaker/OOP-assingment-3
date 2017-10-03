@@ -1,6 +1,6 @@
 package employees;
 
-public class Intern extends Employee {
+public class Intern extends Employee implements EmployeeDefinition{
 	// NEED?? VVVV
 	private String id;
 	private String employeeName;

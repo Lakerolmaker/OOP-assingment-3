@@ -1,7 +1,7 @@
 package employees;
 //package employees;
 
-public class Employee {
+public class Employee implements EmployeeDefinition{
 	
 	private String id;
 	private String employeeName;
