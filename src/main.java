@@ -8,7 +8,7 @@ public class main {
 		
 		
 
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
       
         menu.printLogo();
@@ -165,15 +165,63 @@ public class main {
 
 				break;
 			case (5):
-				//Update an employee
-				System.out.println("Enter the ID of the employee you want to update:");
-				id = sc.next();
-				System.out.println("Enter what you want to change: "); //??
-				ReusaxCorp.updateEmployee(id); //?? add parameters int userinput
+						//Update an employee
+						System.out.println("Enter the ID of the employee you want to update:");
+						String idChange = sc.next();
 			
-				
+						System.out.println("What would you like to change: ");
+						System.out.println("1. Change employee name ");
+						System.out.println("2. Change employee salary ");
+						System.out.println("3. Change jobspecific attributes (tex if its a manager u can change its degree)");
+						System.out.println("4. Change employee position in company (promote/demote)"); 
+						
+						int userInp = sc.nextInt();
 
-				break;
+						if (userInp == 1) {
+							System.out.println("Enter the new name of the employee: ");
+							String employeeName = sc.nextLine();
+							ReusaxCorp.updateEmployee(id, 1, employeeName);
+							
+						} else if (userInp == 2) {
+							System.out.println("Enter the new salary of the employee: ");
+							double grossSalary = scanner.nextDouble();
+							castemployee.setGrossSalary(grossSalary);
+
+						} else if (userInp == 3) {
+							// set specific things tex degree, department osv
+							if (castemployee.getClassification().equals("Director")) {
+								// companyEmployee= new Director(companyEmployee);
+								System.out.println("Select what you want to change for this director: ");
+								System.out.println("1. Change degree");
+								System.out.println("2. Change department");
+
+							} else if (castemployee.getClassification().equals("Manager")) {
+								System.out.println("Select what you want to change for this manager: ");
+								System.out.println("1. Change degree");
+
+							} else if (castemployee.getClassification().equals("Intern")) {
+
+								System.out.println("Select what you want to change for this intern: ");
+								System.out.println("1. Change GPA");
+								userInp = scanner.nextInt();
+								if (userInp == 1) {
+									System.out.println("Please enter new GPA: ");
+									int gpa = scanner.nextInt();
+
+									((Intern) castemployee).setGpa(gpa);
+									castemployee = (Intern) companyEmployee.get(i);
+									// castemployee.setGpa(newGpa);
+								}
+							}
+
+						} else if (userInp == 4) {
+							// PROMOTE/DEMOTE
+						} else {
+							System.out.println("Employee by that name not found, or wrong user input.");// chnage this
+						}
+				
+				
+			break;
 			case (6):
 				//Set directors benefit
 				System.out.println("Enter the new directors benefit: ");
@@ -186,6 +234,8 @@ public class main {
 				//Print total expenses
 				//TODO
 			
+				
+				
 
 				break;
 			case (8):
