@@ -3,12 +3,11 @@ import java.util.ArrayList;
 import employees.*;
 
 public class ReusaxCorp {
-	
-	
+		
 	double directorsBenefit = 5000;
-
-	public void setDirectorsBenefit(double directorsBenefit) {
+	public double setDirectorsBenefit(double directorsBenefit) {
 		this.directorsBenefit = directorsBenefit;
+		return directorsBenefit;
 	}
 
 	private static ArrayList<Employee> companyEmployee =  new ArrayList<Employee>();
