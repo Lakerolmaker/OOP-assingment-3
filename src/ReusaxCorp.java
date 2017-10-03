@@ -97,7 +97,7 @@ public class ReusaxCorp {
 	}
 	
 	// TODO : check 
-	public static void setDirecotrBenefits(double amount) {
+	public static void setDirectorBenefits(double amount) {
 		
 		for(int i = 0; i < companyEmployee.size(); i++) {
 			
@@ -141,7 +141,11 @@ public class ReusaxCorp {
 	//: Sorting algorith
 	public static void SortAlfabeticaly() {
 			
+		//companyEmployee.
+		//
 	}
+	
+	
 	
 	
 	
