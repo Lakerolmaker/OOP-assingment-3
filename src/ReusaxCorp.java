@@ -4,17 +4,8 @@ import employees.*;
 
 public class ReusaxCorp {
 		
-	static double directorsBenefit = 5000;
-	public static double setDirectorsBenefit(double directorsBenefits) {
-		directorsBenefit = directorsBenefits;
-		return directorsBenefit;
-	}
 
-	public static double getDirectorsBenefit() {
-		return directorsBenefit;
-	}
 	
-	Object helo = "";
 
 	private static ArrayList<Object> companyEmployee =  new ArrayList<Object>();
 	
@@ -30,7 +21,9 @@ public class ReusaxCorp {
 		
 		for(int i = 0; i < companyEmployee.size(); i++) {
 			
-			if(companyEmployee.get(i).getEmployeeName().equals(id)) {
+			EmployeeDefinition castemployee = (EmployeeDefinition)companyEmployee.get(i);
+			
+			if(castemployee.getId().equals(id)) {
 				companyEmployee.remove(i);
 				return;
 			}
@@ -49,9 +42,9 @@ public class ReusaxCorp {
 		
 		for(int i = 0; i < companyEmployee.size(); i++) {
 			
-			tottalMoney += companyEmployee.get(i).getGrossSalary();
+			EmployeeDefinition castemployee = (EmployeeDefinition)companyEmployee.get(i);
+			tottalMoney += castemployee.getGrossSalary();
 		}
-		
 		
 			main.print(
 	    	 	" ------------------------------------ "	+ "\n" +
@@ -65,9 +58,9 @@ public class ReusaxCorp {
 		
 		for(int i = 0; i < companyEmployee.size(); i++) {
 			
-			if(companyEmployee.get(i) instanceof EmployeeDefinition) {
-				
 			EmployeeDefinition castemployee = (EmployeeDefinition)companyEmployee.get(i);
+			
+			if(castemployee.getId().equals(id)) {
 			
 			//: prints the user to the console
 			main.print(" --------------------------- " + "\n");
@@ -87,13 +80,15 @@ public class ReusaxCorp {
 		main.print("hello");
 		
 		for(int i = 0; i < companyEmployee.size(); i++) {
+						
+			EmployeeDefinition castemployee = (EmployeeDefinition)companyEmployee.get(i);
 			
 			//: prints the user to the console
 			main.print(" --------------------------- " + "\n");
-			main.print(" ID : " + companyEmployee.get(i).getId() + "\n");
-			main.print(" Name : " + companyEmployee.get(i).getEmployeeName() + "\n");
-			main.print(" Gross Salary : " + companyEmployee.get(i).getGrossSalary() + "\n");
-			main.print(" Net Salary : " + companyEmployee.get(i).getNetSalary() + "\n");
+			main.print(" ID : " + castemployee.getId() + "\n");
+			main.print(" Name : " + castemployee.getEmployeeName() + "\n");
+			main.print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
+			main.print(" Net Salary : " + castemployee.getNetSalary() + "\n");
 			main.print(" --------------------------- " + "\n" + "\n");
 			
 			
@@ -102,12 +97,15 @@ public class ReusaxCorp {
 	}
 	
 	// TODO : check 
-	public static void setDirecotrBenefits() {
+	public static void setDirecotrBenefits(double amount) {
 		
 		for(int i = 0; i < companyEmployee.size(); i++) {
 			
-			if(companyEmployee.get(i).getClass().isInstance(Director.class)) {
+			if(companyEmployee.get(i) instanceof Director) {
 				
+				Director castemployee = (Director)companyEmployee.get(i);
+
+				castemployee.setDirectorsBenefit(amount);
 			}
 			
 		}

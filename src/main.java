@@ -112,7 +112,7 @@ public class main {
 				}else if(employeePosition.equals("Director")) {
 					System.out.print("Enter the ID of the new director: ");
 					String eompoyeeId = sc.next();
-					Director createdEmpoyee = new Director(eompoyeeId, "", 0.0, "","", ReusaxCorp.getDirectorsBenefit());
+					Director createdEmpoyee = new Director(eompoyeeId, "", 0.0, "","");
 
 					System.out.print("Enter the name of the new director: ");
 					String employeeName = sc.next();

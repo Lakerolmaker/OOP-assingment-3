@@ -10,20 +10,25 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	private double newGrossSalary;
 	
-	private double directorsBenefit; //where do we get it from. its the same for all users so maybe not put it in parameters
+	//: So it´s the same
+	private static double directorsBenefit; //where do we get it from. its the same for all users so maybe not put it in parameters
 	
 	private String department; 
 
-	public Director(String id, String employeeName, double grossSalary, String department, String degree, double directorsBenefit) {
+	public Director(String id, String employeeName, double grossSalary, String department, String degree) {
 		super(id, employeeName, grossSalary, degree);
 		
-		this.newGrossSalary = grossSalary + directorsBenefit; //???
-		this.directorsBenefit = directorsBenefit;//???
+		this.newGrossSalary = grossSalary ; 
 		this.department = department;
 		
 	}
 	
 	public double getDirectorsBenefit() {
+		return directorsBenefit;
+	}
+	
+	public double setDirectorsBenefit(double directorsBenefits) {
+		directorsBenefit = directorsBenefits;
 		return directorsBenefit;
 	}
 	
@@ -36,7 +41,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	@Override
 	public double getGrossSalary() {
-		return newGrossSalary;
+		return newGrossSalary + directorsBenefit;
 	}
 
 	@Override
@@ -62,7 +67,9 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 		
 	}
 	
-	
+
+
+
 	
 
 }
