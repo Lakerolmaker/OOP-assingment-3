@@ -50,7 +50,7 @@ public class main {
 			switch(input) {
 
 			case(1):
-								
+				//Create an employee				
 				System.out.println("Enter the position of the employee: (Available: Regular, Inter, Manager, Director.");
 				String employeePosition = sc.next();
 				if(employeePosition.equals("Regular")) {
@@ -141,21 +141,19 @@ public class main {
 		
 			break;
 			case(2):
-				
+				//Print all employees
 				ReusaxCorp.printAllEmployees();
 			
 			break;
 			case (3):
-
-				//TODO
+				//Print specific employee
 				System.out.println("Enter the ID of the person whose info you want to print: ");
 				String id = sc.next();
 				ReusaxCorp.printEmployee(id);
 
 				break;		
 			case (4):
-
-				//TODO
+				//Remove employee	
 				System.out.println("Enter the ID of the person who you want to remove: ");
 				id = sc.next(); //??
 				ReusaxCorp.removeEmployee(id);
@@ -177,19 +175,19 @@ public class main {
 
 				break;
 			case (7):
-
+				//Print total expenses
 				//TODO
 			
 
 				break;
 			case (8):
-
+				//??? what for??
 				//TODO
 			
 
 				break;
 			case (9):
-
+				//??? what for??
 				//TODO
 			
 
