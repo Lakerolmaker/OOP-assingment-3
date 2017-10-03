@@ -165,8 +165,10 @@ public class main {
 				break;
 			case (6):
 				//Set directors benefit
-				
-			
+				System.out.println("Enter the new directors benefit: ");
+			    double amount = sc.nextDouble();
+				ReusaxCorp.setDirectorBenefits(amount);
+				System.out.println("Success! New directorsbenefit set to: " + amount);
 
 				break;
 			case (7):
