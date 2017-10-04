@@ -17,20 +17,7 @@ public class ReusaxCorp {
 
 	}
 
-	public static void removeEmployee(String id) {
-
-		for (int i = 0; i < companyEmployee.size(); i++) {
-
-			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
-
-			if (castemployee.getId().equals(id)) {
-				companyEmployee.remove(i);
-				return;
-			}
-
-		}
-
-	}
+	
 
 	public static void updateEmployee(String id, int choice, Object Change) {
 
@@ -394,7 +381,7 @@ public class ReusaxCorp {
 
 	}
 
-	// : promote methods
+	
 
 	// : Sorting algorith
 	public static void Sort() {
@@ -470,4 +457,18 @@ public class ReusaxCorp {
 
 	}
 
+	public static void removeEmployee(String id) {
+
+		for (int i = 0; i < companyEmployee.size(); i++) {
+
+			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+
+			if (castemployee.getId().equals(id)) {
+				companyEmployee.remove(i);
+				return;
+			}
+
+		}
+
+	}
 }

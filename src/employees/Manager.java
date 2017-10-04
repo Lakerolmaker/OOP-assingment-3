@@ -31,20 +31,15 @@ public class Manager extends Employee implements EmployeeDefinition{
 	}
 	
 	public double getManagerBonus() {
-		if(degree.equals("BSc.")) {
+		
+		if(degree.equals("BSc")) {
 			bonus = super.getGrossSalary() * 0.1;
-			return bonus;
-		}else if(degree.equals("MSc.")) {
+		}else if(degree.equals("MSc")) {
 			bonus = super.getGrossSalary() * 0.2;
-			return bonus;
 		}else if(degree.equals("PhD")) {
 			bonus = super.getGrossSalary() * 0.35;
-			return bonus;
-		}else {
-			System.out.println("That's not a valid degree");
-			return 0; //=?????
 		}
-		
+		return bonus;
 	}
 	
 	@Override

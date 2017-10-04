@@ -61,10 +61,11 @@ public class main {
 					String eompoyeeId = sc.next();
 					Employee createdEmpoyee = new Employee(eompoyeeId, "", 0.0);
 
-					if (ReusaxCorp.findEmployee(eompoyeeId) == false) {
+					if (ReusaxCorp.findEmployee(eompoyeeId) == true) {
 
-						print(" ------------------------------------ " + "\n" + " |  Error , emplyee allready exists | "
-								+ "\n" + " ------------------------------------ " + "\n" + "\n");
+						print(" ------------------------------------ " + "\n" 
+						    + " |  Error , emplyee allready exists | "+ "\n"
+					        + " ------------------------------------ " + "\n" + "\n");
 
 						// :Exits back to the main menu
 						break;
@@ -107,7 +108,7 @@ public class main {
 					System.out.print("Enter the gross salary of the new manager: ");
 					double employeesalary = sc.nextDouble();
 
-					System.out.print("Enter the degree of the new manager: ");
+					System.out.print("Enter the degree of the new manager : ( Avalable : BSc , MSc , PhD ) ");
 					String degree = sc.next();
 
 					Manager createdEmpoyee = new Manager(employeeID, employeeName, employeesalary, degree);
@@ -128,7 +129,7 @@ public class main {
 					String degree = sc.next();
 
 					System.out.println(
-							"Enter the department of the new director: (Available: Technical, Human resources, Business ");
+							"Enter the department of the new director: ( Available: Technical, Human resources, Business ) ");
 					String department = sc.next();
 
 					Director createdEmpoyee = new Director(eompoyeeId, employeeName, employeesalary, department,
@@ -136,8 +137,9 @@ public class main {
 					ReusaxCorp.registerEmployee(createdEmpoyee);
 
 					main.print(
-							" ------------------------------------ " + "\n" + " |     Success , emplyee created    | "
-									+ "\n" + " ------------------------------------ " + "\n" + "\n");
+							" ------------------------------------ " + "\n" 
+						  + " |     Success , emplyee created    | " + "\n" 
+				          + " ------------------------------------ " + "\n" + "\n");
 				}
 
 				break;
@@ -171,8 +173,9 @@ public class main {
 				// : Checks of the employee exits
 				if (ReusaxCorp.findEmployee(idChange) == false) {
 
-					print(" ------------------------------------ " + "\n" + " |     Error , emplyee not found    | "
-							+ "\n" + " ------------------------------------ " + "\n" + "\n");
+					print(" ------------------------------------ " + "\n" 
+					    + " |     Error , emplyee not found    | "+ "\n"
+						+ " ------------------------------------ " + "\n" + "\n");
 
 					// :Exits back to the main menu
 					break;
@@ -228,7 +231,7 @@ public class main {
 						}
 
 					} else if (SpecifiedScan == 2) {
-						System.out.println("Select what you want to change for this manager: ");
+						System.out.println("Select what you want to change for this manager:  ");
 						System.out.println("1. Change degree");
 
 						int managerScan = sc.nextInt();
@@ -257,18 +260,7 @@ public class main {
 					}
 
 				} 
-//				else if (userInp == 4) {
-//					// PROMOTE/DEMOTE
-//					System.out.println("Enter the new position of the employee:");
-//					System.out.println("1. Director");
-//					System.out.println("2. Manager");
-//					System.out.println("3. Intern");
-//					System.out.println("4. Employee (regular)");
-//					int promoteDemote = sc.nextInt(); // so if this is tex3 we demote it to intern
-//
-//					ReusaxCorp.propareCast(idChange, promoteDemote);
-//
-//				}
+//				
 
 				break;
 			case (6):
@@ -276,7 +268,8 @@ public class main {
 				id = sc.next(); //make a methods to fetch the object
 				System.out.println("Enter the position you want to change it to: ");
 				System.out.println("Available: 1.Regular, 2.Intern, 3.Manager, 4.Director");
-				int newPosition = sc.nextInt();
+				Scanner ChoiceScan = new Scanner(System.in);
+				int newPosition = ChoiceScan.nextInt();
 				//ReusaxCorp.updateEmployee(employeeId, newPosition);
 				if(newPosition == 1) { //regular			
 					//put fetched object here
@@ -289,14 +282,14 @@ public class main {
 					ReusaxCorp.promoteToIntern(id, gpa);
 					
 				}else if(newPosition == 3) {//manager
-					System.out.println("Enter the degree of the manager");
+					System.out.println("Enter the degree of the manager : ( Avalable : BSc , MSc , PhD )");
 					String degree = sc.next();
 					ReusaxCorp.promoteToMananger(id, degree);
 					
 				}else if(newPosition==4) {//director
-					System.out.println("Enter the degree of the director");
+					System.out.println("Enter the degree of the director : ( Avalable : BSc , MSc , PhD )");
 					String degree = sc.next();
-					System.out.println("Enter the department of the director");
+					System.out.println("Enter the department of the director : ( Available: Technical, Human resources, Business )");
 					String department = sc.next();
 					ReusaxCorp.promoteToDirector(id, degree, department );
 					
