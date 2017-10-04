@@ -4,9 +4,6 @@ package employees;
 
 public class Director extends Manager implements EmployeeDefinition{ //MAKE IT EXTEND manager?
 	//need these attributes??
-	private String id;
-	private String employeeName;
-	private double grossSalary;
 	private double newGrossSalary;
 	private String classification = "Director";
 	
@@ -35,7 +32,8 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	public String getDepartment() {
 		return department;
 	}
-	public void setDepartment(String department) { //SHOULD WE HAVE THIS?
+	
+	public void setDepartment(String department) { 
 		this.department = department;
 	}
 	
@@ -74,7 +72,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 
 	@Override
 	public String toString() {
-		return "Director id=" + this.id + ", employeeName=" + this.employeeName + ", grossSalary=" + this.grossSalary
+		return "Director id=" + super.getId() + ", employeeName=" + super.getEmployeeName() + ", grossSalary=" + super.getGrossSalary()
 				+ ", newGrossSalary=" + this.newGrossSalary + ", classification=" + this.classification + ", department="
 				+ this.department;
 	}

@@ -1,10 +1,7 @@
 package employees;
 
 public class Intern extends Employee implements EmployeeDefinition{
-	// NEED?? VVVV
-	private String id;
-	private String employeeName;
-	private double grossSalary;
+	
 
 	private double newGrossSalary;
 	
@@ -16,7 +13,6 @@ public class Intern extends Employee implements EmployeeDefinition{
 		super(id, employeeName, grossSalary);
 
 		this.gpa = gpa;
-		
 		this.newGrossSalary = getGrossSalary(); //??
 
 	}
@@ -30,21 +26,16 @@ public class Intern extends Employee implements EmployeeDefinition{
 	}
 
 	public double getGrossSalary() {
+		
 		if (gpa <= 5) { // have this.getgpa() instead?
 			newGrossSalary = 0; 
-			return newGrossSalary;
 		} else if (gpa > 5 && gpa < 8) {
-			newGrossSalary = grossSalary;
-			return newGrossSalary;
+			newGrossSalary = super.getGrossSalary();
 		} else if (gpa >= 8) {
 			int bonus = 1000;
-			newGrossSalary = grossSalary + bonus;
-			return newGrossSalary;
-		} else {
-			System.out.println("That is not a valid gpa");
-			return 0; //?????
-		}
-
+			newGrossSalary = super.getGrossSalary() + bonus;	
+		} 
+		return newGrossSalary;
 	}
 
 	@Override
@@ -62,8 +53,8 @@ public class Intern extends Employee implements EmployeeDefinition{
 	
 	@Override
 	public String toString() {
-		return "Intern id=" + id + ", employeeName=" + employeeName + ", grossSalary=" + grossSalary
-				+ ", newGrossSalary=" + newGrossSalary + ", classification=" + classification + ", gpa=" + gpa;
+		return "Intern id=" + super.getId() + ", employeeName=" + super.getEmployeeName() + ", grossSalary=" + super.getGrossSalary()
+				+ ", newGrossSalary=" + this.newGrossSalary + ", classification=" + this.classification + ", gpa=" + this.gpa;
 	}
 	
 	

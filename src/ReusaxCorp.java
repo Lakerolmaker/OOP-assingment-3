@@ -2,7 +2,7 @@ import java.awt.List;
 import java.util.ArrayList;
 
 import java.util.Collections;
-import java.util.Scanner;
+
 
 import employees.*;
 import javafx.collections.ListChangeListener.Change;
@@ -109,13 +109,13 @@ public class ReusaxCorp {
 				EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
 
 				if (castemployee.getId().equals(id)) {
-			
 					Director UpdatedCast = (Director)companyEmployee.get(i);
 					UpdatedCast.setDegree(Change.toString());;
 					companyEmployee.set(i, UpdatedCast);
 				}
 			}
 			
+		//: Change department for director
 		}else if(choice == 4) {
 			
 			for (int i = 0; i < companyEmployee.size(); i++) {
@@ -123,7 +123,6 @@ public class ReusaxCorp {
 				EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
 
 				if (castemployee.getId().equals(id)) {
-			
 					Director UpdatedCast = (Director)companyEmployee.get(i);
 					UpdatedCast.setDepartment(Change.toString());
 					companyEmployee.set(i, UpdatedCast);
@@ -132,15 +131,52 @@ public class ReusaxCorp {
 			
 		}else if(choice == 5) {
 			
-		}else if(choice == 4) {
-					
-			Employee castemployee;
+			for (int i = 0; i < companyEmployee.size(); i++) {
+
+				EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+
+				if (castemployee.getId().equals(id)) {
+					Manager UpdatedCast = (Manager)companyEmployee.get(i);
+					UpdatedCast.setDegree(Change.toString());
+					companyEmployee.set(i, UpdatedCast);
+				}
+			}
 			
-			upDownCast(id, castemployee, (int)Change);
+		}else if(choice == 6) {
+				
+			for (int i = 0; i < companyEmployee.size(); i++) {
+
+				EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+
+				if (castemployee.getId().equals(id)) {
+					Intern UpdatedCast = (Intern)companyEmployee.get(i);
+					UpdatedCast.setGpa((int)Change);
+					companyEmployee.set(i, UpdatedCast);
+				}
+			}
+			
+		}else if(choice == 7) {
+			
+		}else if(choice == 8) {
 			
 		}
 		
 	}
+	
+	
+	public static void propareCast(String id , int choice) {
+		
+		
+		if(choice  == 4) {
+			
+			EmployeeDefinition castemployee = getEmployee(id);
+
+			//Director newCastedEmployee = new Director(id, id, choice, id, id);	
+		}
+		
+		
+	}
+	
 	
 	public static void upDownCast(String id, EmployeeDefinition castEmployee, int userInput) { //OR make it take string id or something else??
 		
@@ -236,7 +272,6 @@ public class ReusaxCorp {
 			main.print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
 			main.print(" Net Salary : " + castemployee.getNetSalary() + "\n");
 			
-
 		}
 		
 		main.print(" --------------------------- " + "\n");
@@ -334,4 +369,38 @@ public class ReusaxCorp {
 
 	}
 
+	public static boolean findEmployee(String id) {
+		
+		boolean found = false;
+	
+		for (int i = 0; i < companyEmployee.size(); i++) {
+			
+			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+
+			if(castemployee.getId().equals(id))
+				found = true;
+		}
+		
+		return found;
+	}
+	
+	public static EmployeeDefinition getEmployee(String id) {
+	
+		EmployeeDefinition retrurnEmployee = null;
+		
+		for (int i = 0; i < companyEmployee.size(); i++) {
+
+			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+
+			if (castemployee.getId().equals(id)) 
+				retrurnEmployee = castemployee;
+			
+		}
+		
+		return retrurnEmployee;
+		
+	}
+	
+	
+	
 }
