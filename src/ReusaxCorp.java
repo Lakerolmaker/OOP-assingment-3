@@ -147,50 +147,7 @@ public class ReusaxCorp {
 
 	}
 
-	// public static void propareCast(String id, int choice) {
-	//
-	// for (int i = 0; i < companyEmployee.size(); i++) {
-	//
-	// EmployeeDefinition castemployee = (EmployeeDefinition)
-	// companyEmployee.get(i);
-	//
-	// if (castemployee.getId().equals(id)) {
-	// if (choice == 1) {// regular
-	// promoteToEmployee(castemployee.getId(), castemployee.getEmployeeName(),
-	// castemployee.getGrossSalary());
-	//
-	// } else if (choice == 2) {// intern
-	// promoteToIntern(castemployee.getId(), castemployee.getEmployeeName(),
-	// castemployee.getGrossSalary(),
-	// gpa);
-	//
-	// } else if (choice == 3) {// manager
-	//
-	// promoteToMananger(castemployee.getId(), castemployee.getEmployeeName(),
-	// castemployee.getGrossSalary(), degree);
-	// // Manager manager = new Manager(id, castemployee.getEmployeeName(),
-	// // castemployee.getGrossSalary(), degree)
-	// // promoteToMananger(castemployee);
-	//
-	// } else if (choice == 4) {// director
-	// promoteToDirector(castemployee.getId(), castemployee.getEmployeeName(),
-	// castemployee.getGrossSalary(), degree, department);
-	// }
-	// removeEmployee(castemployee.getId());
-	//
-	// }
-	//
-	// }
-	//
-	// // if(choice == 4) {
-	// //
-	// // EmployeeDefinition castemployee = getEmployee(id);
-	// //
-	// // //Director newCastedEmployee = new Director(id, id, choice, id, id);
-	// // }
-	// //
-	//
-	// }
+	
 
 	public static void promoteToEmployee(String id) {
 		// castEmployee = ((Employee) castEmployee); // ???
@@ -258,30 +215,7 @@ public class ReusaxCorp {
 
 	}
 
-	// public static void upDownCast(String id, int userInput) { // OR make it take
-	// string id or something else??
-	//
-	// for (int i = 0; i < companyEmployee.size(); i++) {
-	//
-	// Employee castEmployee = (EmployeeDefinition) companyEmployee.get(i);
-	//
-	// if (castEmployee.getId().equals(id)) {
-	//
-	// if (userInput == 1) {
-	// promoteToDirector(castEmployee);
-	// } else if (userInput == 2) {
-	// promoteToMananger(castEmployee);
-	// } else if (userInput == 3) {
-	// promoteToIntern(castEmployee);
-	// } else if (userInput == 4) {
-	// promoteToEmployee(castEmployee);
-	// }
-	//
-	// }
-	//
-	// }
-	//
-	// }
+	
 
 	public static void getTotallExpences(String id) {
 

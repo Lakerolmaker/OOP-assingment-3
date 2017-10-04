@@ -51,26 +51,29 @@ public class main {
 			switch (input) {
 
 			case (1):
-				// Create an employee
-				System.out
-						.println("Enter the position of the employee: (Available: Regular, Inter, Manager, Director.");
-				String employeePosition = sc.next();
-				if (employeePosition.equals("Regular")) {
-
-					System.out.print("Enter the ID of the new regular employee: ");
+				
+			
+					System.out.print("Enter the ID of the new employee: ");
 					String eompoyeeId = sc.next();
-					Employee createdEmpoyee = new Employee(eompoyeeId, "", 0.0);
-
+				
 					if (ReusaxCorp.findEmployee(eompoyeeId) == true) {
 
-						print(" ------------------------------------ " + "\n" 
-						    + " |  Error , emplyee allready exists | "+ "\n"
-					        + " ------------------------------------ " + "\n" + "\n");
+						print("\n ------------------------------------ " + "\n" 
+						      + " |     Error , ID allready in use   | "+ "\n"
+					          + " ------------------------------------ " + "\n" + "\n");
 
 						// :Exits back to the main menu
 						break;
 					}
+					
+					
+					System.out.println("Enter the position of the employee: (Available: Regular, Inter, Manager, Director.");
+					String employeePosition = sc.next();
 
+				if (employeePosition.equals("Regular")) {
+					
+					Employee createdEmpoyee = new Employee(eompoyeeId, "", 0.0);
+					
 					System.out.print("Enter the name of the regular employee: ");
 					String employeeName = sc.next();
 					createdEmpoyee.setEmployeeName(employeeName);
@@ -82,9 +85,6 @@ public class main {
 					ReusaxCorp.registerEmployee(createdEmpoyee);
 
 				} else if (employeePosition.equals("Intern")) {
-
-					System.out.print("Enter the ID of the new intern: ");
-					String eompoyeeId = sc.next();
 
 					System.out.print("Enter the name of the new intern: ");
 					String employeeName = sc.next();
@@ -99,9 +99,7 @@ public class main {
 					ReusaxCorp.registerEmployee(createdEmpoyee);
 
 				} else if (employeePosition.equals("Manager")) {
-					System.out.print("Enter the ID of the new manager: ");
-					String employeeID = sc.next();
-
+				
 					System.out.print("Enter the name of the new manager: ");
 					String employeeName = sc.next();
 
@@ -111,13 +109,11 @@ public class main {
 					System.out.print("Enter the degree of the new manager : ( Avalable : BSc , MSc , PhD ) ");
 					String degree = sc.next();
 
-					Manager createdEmpoyee = new Manager(employeeID, employeeName, employeesalary, degree);
+					Manager createdEmpoyee = new Manager(eompoyeeId, employeeName, employeesalary, degree);
 					ReusaxCorp.registerEmployee(createdEmpoyee); // WHAT TO DO WITH THESE??
 
 				} else if (employeePosition.equals("Director")) {
-					System.out.print("Enter the ID of the new director: ");
-					String eompoyeeId = sc.next();
-
+				
 					System.out.print("Enter the name of the new director: ");
 					String employeeName = sc.next();
 
@@ -180,6 +176,7 @@ public class main {
 					// :Exits back to the main menu
 					break;
 				}
+				
 				System.out.println("What would you like to change: ");
 				System.out.println("1. Change employee name ");
 				System.out.println("2. Change employee salary ");
