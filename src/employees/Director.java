@@ -8,9 +8,8 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	private String department; 
 
-	public Director(String id, String employeeName, double grossSalary, String department, String degree) {
-		super(id, employeeName, grossSalary, degree);
-		
+	public Director(String id, String employeeName, double grossSalaryinput, String department, String degree) {
+		super(id, employeeName, grossSalaryinput, degree);
 		this.department = department;
 		
 	}
@@ -33,7 +32,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	@Override
 	public double getGrossSalary() {
-		return super.getGrossSalary() + directorsBenefit;
+		return super.getGrossSalary() + super.getManagerBonus() + directorsBenefit;
 	}
 
 	@Override

@@ -83,8 +83,6 @@ public class ReusaxCorp {
 	}
 	//END REMOVE AN EMPLOYEE//
 
-	
-	// TODO : Add so it recognizes the classification automaticaly
 	// 5. UPDATE AN EMPLOYEE
 	public static void updateEmployee(String id, int choice, Object Change) {
 		if (choice == 1) { // CHANGE THE NAME

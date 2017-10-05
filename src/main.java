@@ -233,8 +233,8 @@ public class main {
 
 						} else if (directorScan == 2) {
 							System.out.println("Input new department : ");
-							// Scanner depertmentScan = new Scanner(System.in);
-							String depertmentInput = sc.nextLine();
+							Scanner depertmentScan = new Scanner(System.in);
+							String depertmentInput = depertmentScan.nextLine();
 							ReusaxCorp.updateEmployee(idChange, 4, depertmentInput);
 
 						}

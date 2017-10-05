@@ -1,21 +1,20 @@
 package employees;
 
 public class Manager extends Employee implements EmployeeDefinition{
-	
-	private double grossSalaryPlusBonus;
-	
+
 	private String degree;
 	
 	private double bonus;
-	
+	private double grossSalary;
 	private String classification = "Manager";
 	
-	public Manager(String id, String employeeName, double grossSalary, String degree) {
-		super(id, employeeName, grossSalary);
+	public Manager(String id, String employeeName, double grossSalaryInput, String degree) {
+		super(id, employeeName, grossSalaryInput);
 		
+		this.grossSalary = grossSalaryInput;
 		this.degree = degree;
 		this.bonus = getManagerBonus();
-		this.grossSalaryPlusBonus = grossSalary; 
+	
 		
 	}
 
@@ -28,7 +27,7 @@ public class Manager extends Employee implements EmployeeDefinition{
 	}
 	
 	public double getGrossSalary() {
-		return grossSalaryPlusBonus + bonus;
+		return super.getGrossSalary() + bonus;
 	}
 	
 	public double getManagerBonus() {
