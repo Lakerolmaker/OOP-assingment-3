@@ -45,19 +45,18 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 		double lowIncomeTax = 0.2;
 		double highIncomeTax = 0.4;
 		
-		if(super.getGrossSalary() < lowIncome) {//??
-			netSalary = super.getGrossSalary();
-		} else if (super.getGrossSalary() >= lowIncome && super.getGrossSalary() < highIncome) {
-			netSalary = super.getGrossSalary() - (super.getGrossSalary() * lowIncomeTax);
+		if(this.getGrossSalary() < lowIncome) {//??
+			netSalary = super.getNetSalary(); //changed this
+		} else if (this.getGrossSalary() >= lowIncome && this.getGrossSalary() < highIncome) {
+			netSalary = this.getGrossSalary() - (this.getGrossSalary() * lowIncomeTax);
 		} else {
-			double remainingGross = super.getGrossSalary() - lowIncome;
-			netSalary = super.getGrossSalary() - (lowIncome * lowIncomeTax) - (remainingGross * highIncomeTax);
+			double remainingGross = this.getGrossSalary() - lowIncome;
+			netSalary = this.getGrossSalary() - (lowIncome * lowIncomeTax) - (remainingGross * highIncomeTax);
 		}
 		
 		return netSalary;
 		
 	}
-	
 	
 	@Override
 	public String getClassification() {
