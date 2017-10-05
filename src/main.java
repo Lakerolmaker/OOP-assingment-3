@@ -12,7 +12,7 @@ public class main {
 
 		// : While-loop that keeps the program running forever.
 		while (true) {
-			// : Dispalys the menu
+			// : Displays the menu
 			System.out.print("\n" +
 				      " ------------------------------------------ " + "\n"
 					+ " |                 Menu                   | " + "\n"
@@ -136,8 +136,7 @@ public class main {
 							"Enter the department of the new director: ( Available: Technical, Human resources, Business ) ");
 					String department = sc.next();
 
-					Director createdEmpoyee = new Director(employeeId, employeeName, employeesalary, department,
-							degree);
+					Director createdEmpoyee = new Director(employeeId, employeeName, employeesalary, department, degree);
 					ReusaxCorp.registerEmployee(createdEmpoyee);
 
 					main.print( "\n" +
