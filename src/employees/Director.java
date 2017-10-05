@@ -74,7 +74,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 
 	@Override
 	public String toString() {
-		return "Director ID: " + super.getId() + ", Name: " + super.getEmployeeName() + ", Gross salary with bonus: " + this.getGrossSalary() + ", Classification: " + this.classification + ", Department: "
+		return "Director ID: " + super.getId() + ", Name: " + super.getEmployeeName() + ", Gross salary with bonus: " + this.getGrossSalary() + ", Classification: " + this.classification + ", Degree: "+ super.getDegree()+", Department: "
 				+ this.department;
 	}
 
