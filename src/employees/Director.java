@@ -47,10 +47,14 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 		double highIncomeTax = 0.4;
 		
 		if(this.getGrossSalary() < lowIncome) {//??
+<<<<<<< HEAD
 			netSalary = (this.getGrossSalary()  - (this.getGrossSalary() * originalTax)); //changed this
+			netSalary = ((this.getGrossSalary() + getManagerBonus())) - (((this.getGrossSalary()+getManagerBonus()) * originalTax)); //changed this
+>>>>>>> 69841f08c9cdd5990d6a1b96e0aae0b1a870e6ff
 		} else if (this.getGrossSalary() >= lowIncome && this.getGrossSalary() < highIncome) {
-			netSalary = (this.getGrossSalary() + getManagerBonus()) - ((this.getGrossSalary()+getManagerBonus()) * lowIncomeTax);
+			netSalary = (this.getGrossSalary() + getManagerBonus()) - (((this.getGrossSalary()+getManagerBonus()) * lowIncomeTax));
 		} else {
+<<<<<<< HEAD
 			double First30 = (lowIncome * 0.8 ) ;
 			netSalary = ((this.getGrossSalary() - lowIncome)  * highIncomeTax) +  First30;
 		}
