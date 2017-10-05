@@ -32,7 +32,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	@Override
 	public double getGrossSalary() {
-		return super.getGrossSalary() + directorsBenefit;
+		return super.getGrossSalary() + super.getManagerBonus() + directorsBenefit;
 	}
 
 	@Override
@@ -49,10 +49,11 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 		if(this.getGrossSalary() < lowIncome) {//??
 			netSalary = (this.getGrossSalary()  - (this.getGrossSalary() * originalTax)); //changed this
 		} else if (this.getGrossSalary() >= lowIncome && this.getGrossSalary() < highIncome) {
-			netSalary = (this.getGrossSalary() + getManagerBonus()) - (((this.getGrossSalary()+getManagerBonus()) * lowIncomeTax));
+			netSalary = (this.getGrossSalary()) - (((this.getGrossSalary()) * lowIncomeTax));
 		} else {
-			double First30 = (lowIncome * 0.8 ) ;
-			netSalary = ((this.getGrossSalary() - lowIncome)  * highIncomeTax) +  First30;
+			double first30 = (lowIncome * 0.8 ) ;
+			double after30 = ((this.getGrossSalary() - lowIncome)  * 0.6);
+			netSalary = (after30 +  first30);
 			
 		}
 		
