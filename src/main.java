@@ -353,7 +353,7 @@ public class main {
 				System.out.println("Enter the new directors benefit: ");
 				double amount = sc.nextDouble();
 				ReusaxCorp.setDirectorBenefits(amount);
-				System.out.println("Success! New directorsbenefit set to: " + amount);
+				System.out.println("Success! New directors benefit set to: " + amount);
 
 				break;
 			case (8):
