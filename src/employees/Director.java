@@ -1,19 +1,16 @@
 package employees;
 
 public class Director extends Manager implements EmployeeDefinition{ //MAKE IT EXTEND manager?
-	//need these attributes??
-	private double newGrossSalary =  super.getGrossSalary() + directorsBenefit;
-	private String classification = "Director";
 	
-	//: So it´s the same
-	private static double directorsBenefit; //where do we get it from. its the same for all users so maybe not put it in parameters
+	private String classification = "Director";
+
+	private static double directorsBenefit; 
 	
 	private String department; 
 
 	public Director(String id, String employeeName, double grossSalary, String department, String degree) {
 		super(id, employeeName, grossSalary, degree);
 		
-	//	this.newGrossSalary; 
 		this.department = department;
 		
 	}
@@ -22,9 +19,8 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 		return directorsBenefit;
 	}
 	
-	public double setDirectorsBenefit(double directorsBenefits) {
+	public void setDirectorsBenefit(double directorsBenefits) {
 		directorsBenefit = directorsBenefits;
-		return directorsBenefit;
 	}
 	
 	public String getDepartment() {
@@ -37,7 +33,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	@Override
 	public double getGrossSalary() {
-		return newGrossSalary;
+		return super.getGrossSalary() + directorsBenefit;
 	}
 
 	@Override
@@ -50,22 +46,19 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 		double lowIncomeTax = 0.2;
 		double highIncomeTax = 0.4;
 		
-		if(newGrossSalary < lowIncome) {//??
-			netSalary = super.getNetSalary();
-		} else if (newGrossSalary >= lowIncome && newGrossSalary < highIncome) {
-			netSalary = newGrossSalary - (newGrossSalary * lowIncomeTax);
+		if(super.getGrossSalary() < lowIncome) {//??
+			netSalary = super.getGrossSalary();
+		} else if (super.getGrossSalary() >= lowIncome && super.getGrossSalary() < highIncome) {
+			netSalary = super.getGrossSalary() - (super.getGrossSalary() * lowIncomeTax);
 		} else {
-			double remainingGross = newGrossSalary - lowIncome;
-			netSalary = newGrossSalary - (lowIncome * lowIncomeTax) - (remainingGross * highIncomeTax);
+			double remainingGross = super.getGrossSalary() - lowIncome;
+			netSalary = super.getGrossSalary() - (lowIncome * lowIncomeTax) - (remainingGross * highIncomeTax);
 		}
 		
 		return netSalary;
 		
 	}
 	
-//	public double getNewGrossSalary() {
-//		return newGrossSalary;
-//	}
 	
 	@Override
 	public String getClassification() {

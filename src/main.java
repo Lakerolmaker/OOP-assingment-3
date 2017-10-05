@@ -205,15 +205,9 @@ public class main {
 					///////// CHANGE THIS///////////
 					/// Make if else statements depending of what classification the specified ID
 					///////// has
-
-					System.out.println("Who would you like to change: ");/// GET RID OF ALL THESE
-					System.out.println("1. Director ");
-					System.out.println("2. Manager ");
-					System.out.println("3. Intern ");
-
-					int specifiedScan = sc.nextInt();
-
-					if (specifiedScan == 1) {
+					String EmployeeClass =  ReusaxCorp.getEmployee(idChange).getClassification();
+					
+					if (EmployeeClass == "Director") {
 						// companyEmployee= new Director(companyEmployee);
 						System.out.println("Select what you want to change for this director: ");
 						System.out.println("1. Change degree");
@@ -245,7 +239,7 @@ public class main {
 
 						}
 
-					} else if (specifiedScan == 2) {
+					} else if (EmployeeClass == "Manager") {
 						System.out.println("Select what you want to change for this manager:  ");
 						System.out.println("1. Change degree");
 
@@ -268,7 +262,7 @@ public class main {
 							ReusaxCorp.updateEmployee(idChange, 5, degreeInput);
 						}
 
-					} else if (specifiedScan == 3) {
+					} else if (EmployeeClass == "Intern") {
 
 						System.out.println("Select what you want to change for this intern: ");
 						System.out.println("1. Change GPA");
@@ -351,21 +345,34 @@ public class main {
 
 				// TODO
 				// Set directors benefit
-				System.out.println("Enter the new directors benefit: ");
+				System.out.print("Enter the new directors benefit: ");
 				double amount = sc.nextDouble();
 				ReusaxCorp.setDirectorBenefits(amount);
-				System.out.println("Success! New directors benefit set to: " + amount);
+				
+				   		print("\n" +
+				   			  " ------------------------------------ " + "\n" 
+						    + " |  Success , Director Benefits set | " + "\n"
+						    + " ------------------------------------ " + "\n" + "\n");
 
 				break;
 			case (8):
 				// Print total expenses!!!
-				ReusaxCorp.getTotalExpences();
+				Double totalMoney = ReusaxCorp.getTotalExpences();
+			
+				main.print(" ------------------------------------ " + "\n" 
+					+ " |  Total expenses : " + totalMoney + "\n"
+					+ " ------------------------------------ " + "\n" + "\n");
 
 				break;
 			case (9):
 				// PRINT NUMBER OF EMPLOYEEES
-				ReusaxCorp.getNumberOfEmployees();
+			int companySize = ReusaxCorp.getNumberOfEmployees();
 
+			print(" --------------------------- " + "\n");
+			print(" Number of employees : " + companySize);
+			print(" --------------------------- " + "\n");
+			
+			
 				break;
 			case (10): 
 

@@ -273,7 +273,7 @@ public class ReusaxCorp {
 	}
 
 	// 8. PRINT TOTAL EXPENSES FOR THE COMPANY
-	public static void getTotalExpences() {
+	public static double getTotalExpences() {
 
 		double totalMoney = 0;
 
@@ -281,15 +281,14 @@ public class ReusaxCorp {
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
 			totalMoney += castemployee.getGrossSalary();
 		}
-		main.print(" ------------------------------------ " + "\n" + " |  Total expenses : " + totalMoney + "\n"
-				+ " ------------------------------------ " + "\n" + "\n");
+		
+		return totalMoney;
+		
 	}
 
 	// 9. PRINT TOTAL NUMBER OF EMPLOYEES
-	public static void getNumberOfEmployees() {
-		main.print(" --------------------------- " + "\n");
-		main.print(" Number of employees : " + companyEmployee.size());
-		main.print(" --------------------------- " + "\n");
+	public static int getNumberOfEmployees() {
+		return companyEmployee.size();
 
 	}
 
