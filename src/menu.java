@@ -49,7 +49,7 @@ public class menu {
 					}
 					
 					SpaceC = "";
-					int cWhiteSpace = 25 - c.length() ;
+					int cWhiteSpace = 26 - c.length() ;
 					for(int z = 0; z < cWhiteSpace; z++) {
 							SpaceC += new String(" ");	
 					}
@@ -70,7 +70,7 @@ public class menu {
 				" |                  " + b +  SpaceB + "                   | " + "\n" +
 				" |                                                     | " + "\n" +
 				" |                                                     | " + "\n" +
-				" |              " + c + SpaceC + "              | " + "\n" +
+				" |              " + c + SpaceC + "             | " + "\n" +
 				" |                                                     | " + "\n" +
 				" |                                                     | " + "\n" +
 				" |                                                     | " + "\n" +

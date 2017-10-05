@@ -10,11 +10,12 @@ public class main {
 
 		menu.printLogo();
 
-		// : While-loop that keeps the progrm running forever.
+		// : While-loop that keeps the program running forever.
 		while (true) {
 
 			// : Dispalys the menu
-			System.out.print("" + " ------------------------------------------ " + "\n"
+			System.out.print("\n" +
+				      " ------------------------------------------ " + "\n"
 					+ " |                 Menu                   | " + "\n"
 					+ " ---------------------------------------- | " + "\n"
 					+ " | Press 1 to register an employee        | " + "\n"
@@ -41,10 +42,10 @@ public class main {
 					+ " ---------------------------------------- | " + "\n" + " Input a choice : ");
 
 			// : Gets the user input, with some fail safes
-			// Scanner menuScanner = new Scanner(System.in);
+			Scanner menuScanner = new Scanner(System.in);
 			int input = 0;
 			try {
-				input = sc.nextInt();
+				input = menuScanner.nextInt();
 			} catch (Exception e) {
 			}
 
@@ -97,7 +98,7 @@ public class main {
 					String employeeName = sc.next();
 					System.out.print("Enter the gross salary of the new manager: ");
 					double employeesalary = sc.nextDouble();
-					System.out.print("Enter the degree of the new manager : ( Available : 1.BSc , 2.MSc , 3.PhD ) ");
+					System.out.print("Enter the degree of the new manager ( Available : 1.BSc , 2.MSc , 3.PhD ) : ");
 					int choice = sc.nextInt();
 
 					String degree = "";
@@ -112,7 +113,7 @@ public class main {
 
 					Manager createdEmpoyee = new Manager(employeeId, employeeName, employeesalary, degree);
 					ReusaxCorp.registerEmployee(createdEmpoyee);
-
+					
 				} else if (employeePosition == 4) {
 
 					System.out.print("Enter the name of the new director: ");
@@ -383,7 +384,7 @@ public class main {
 				System.exit(0);
 
 				break;
-			default:
+				default:
 
 				print("\n" + " ------------------------------------ " + "\n" 
 				           + " |    Error , not a valid option    | " + "\n"

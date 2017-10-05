@@ -15,7 +15,7 @@ public class Manager extends Employee implements EmployeeDefinition{
 		
 		this.degree = degree;
 		this.bonus = getManagerBonus();
-		this.grossSalaryPlusBonus = grossSalary + bonus; 
+		this.grossSalaryPlusBonus = grossSalary; 
 		
 	}
 
@@ -24,10 +24,11 @@ public class Manager extends Employee implements EmployeeDefinition{
 	}
 	public void setDegree(String degree) {
 		this.degree = degree;
+		this.bonus = getManagerBonus();
 	}
 	
 	public double getGrossSalary() {
-		return grossSalaryPlusBonus;
+		return grossSalaryPlusBonus + bonus;
 	}
 	
 	public double getManagerBonus() {
