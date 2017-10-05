@@ -56,8 +56,9 @@ public class main {
 
 				if (ReusaxCorp.findEmployee(employeeId) == true) {
 
-					print("\n ------------------------------------ " + "\n" + " |     Error , ID already in use   | "
-							+ "\n" + " ------------------------------------ " + "\n" + "\n");
+					print("\n ------------------------------------ " + "\n" 
+					      + " |     Error , ID already in use   | "+ "\n"
+						+ " ------------------------------------ " + "\n" + "\n");
 
 					// :Exits back to the main menu
 					break;
@@ -138,15 +139,15 @@ public class main {
 							degree);
 					ReusaxCorp.registerEmployee(createdEmpoyee);
 
-					main.print(
-							" ------------------------------------ " + "\n" + " |     Success , employee created    | "
-									+ "\n" + " ------------------------------------ " + "\n" + "\n");
+					main.print( "\n" +
+							" ------------------------------------ " + "\n" 
+					      + " |     Success , employee created   | " + "\n"
+						  + " ------------------------------------ " + "\n" + "\n");
 				}
 
 				break;
 			case (2):
 				// Print all employees sorted
-				ReusaxCorp.Sort();
 				ReusaxCorp.printAllEmployees();
 
 				break;
@@ -172,8 +173,9 @@ public class main {
 				// : Checks of the employee exits
 				if (ReusaxCorp.findEmployee(idChange) == false) {
 
-					print(" ------------------------------------ " + "\n" + " |     Error , employee not found    | "
-							+ "\n" + " ------------------------------------ " + "\n" + "\n");
+					print(" ------------------------------------ " + "\n" 
+					    + " |     Error , employee not found   | " + "\n"
+					    + " ------------------------------------ " + "\n" + "\n");
 
 					// :Exits back to the main menu
 					break;
@@ -364,11 +366,13 @@ public class main {
 				ReusaxCorp.getNumberOfEmployees();
 
 				break;
-			case (10): //REMOVE THIS OPTION AND MAKE 10 EXIT THE PROGRAM AGAIN?
+			case (10): 
 
-				// : Exits the program
-				// need to change this to show the before and after sorting in the console??
 				ReusaxCorp.Sort();
+			
+			    print(" ------------------------------------ " + "\n" 
+				    + " |         Employees Sorted         | " + "\n"
+				    + " ------------------------------------ " + "\n" + "\n");
 
 				break;
 			case (11):
@@ -379,8 +383,9 @@ public class main {
 				break;
 			default:
 
-				print("\n" + " ------------------------------------ " + "\n" + " |    Error , not a valid option    | "
-						+ "\n" + " ------------------------------------ " + "\n" + "\n");
+				print("\n" + " ------------------------------------ " + "\n" 
+				           + " |    Error , not a valid option    | " + "\n"
+					       + " ------------------------------------ " + "\n" + "\n");
 
 				break;
 			}
