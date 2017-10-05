@@ -67,63 +67,72 @@ public class main {
 					}
 					
 					
-					System.out.println("Enter the position of the employee: (Available: Regular, Inter, Manager, Director.");
-					String employeePosition = sc.next();
+					System.out.println("Enter the position of the employee: (Available: 1.Regular, 2.Intern, 3.Manager, 4.Director.");
+					int employeePosition = sc.nextInt();
 
-				if (employeePosition.equals("Regular")) {
-					
-					Employee createdEmpoyee = new Employee(eompoyeeId, "", 0.0);
-					
+				if (employeePosition == 1) {
+							
 					System.out.print("Enter the name of the regular employee: ");
 					String employeeName = sc.next();
-					createdEmpoyee.setEmployeeName(employeeName);
-
 					System.out.print("Enter the gross salary of the regular employee: ");
-					double employeesalary = sc.nextDouble();
-					createdEmpoyee.setGrossSalary(employeesalary);
-
+					double employeesalary = sc.nextDouble();			
+							
+					Employee createdEmpoyee = new Employee(eompoyeeId, employeeName, employeesalary);
 					ReusaxCorp.registerEmployee(createdEmpoyee);
 
-				} else if (employeePosition.equals("Intern")) {
+				} else if (employeePosition == 2) {
 
 					System.out.print("Enter the name of the new intern: ");
 					String employeeName = sc.next();
-
 					System.out.print("Enter the gross salary of the new intern: ");
 					double employeesalary = sc.nextDouble();
-
 					System.out.print("Enter the GPA of the new intern : ");
 					int gpa = sc.nextInt();
 
 					Intern createdEmpoyee = new Intern(eompoyeeId, employeeName, employeesalary, gpa);
 					ReusaxCorp.registerEmployee(createdEmpoyee);
 
-				} else if (employeePosition.equals("Manager")) {
+				} else if (employeePosition == 3) {
 				
 					System.out.print("Enter the name of the new manager: ");
 					String employeeName = sc.next();
-
 					System.out.print("Enter the gross salary of the new manager: ");
 					double employeesalary = sc.nextDouble();
-
-					System.out.print("Enter the degree of the new manager : ( Avalable : BSc , MSc , PhD ) ");
-					String degree = sc.next();
+					System.out.print("Enter the degree of the new manager : ( Avalable : 1.BSc , 2.MSc , 3.PhD ) ");
+					int choice = sc.nextInt();
+					
+					String degree = "";
+					
+					if(choice == 1) {
+						degree = "bsc";
+					}else if(choice == 2) {
+						degree = "msc";
+					}else if(choice == 3) {
+						degree = "phd";
+					}
 
 					Manager createdEmpoyee = new Manager(eompoyeeId, employeeName, employeesalary, degree);
-					ReusaxCorp.registerEmployee(createdEmpoyee); // WHAT TO DO WITH THESE??
-
-				} else if (employeePosition.equals("Director")) {
+					ReusaxCorp.registerEmployee(createdEmpoyee); 
+					
+				} else if (employeePosition == 4) {
 				
 					System.out.print("Enter the name of the new director: ");
 					String employeeName = sc.next();
-
 					System.out.print("Enter the gross salary of the new director: ");
 					double employeesalary = sc.nextDouble();
-
-					System.out.println("Enter the degree of the new director: "); // I CHANGED THE ORDER FOR DEGREE AND
-																					// DEPARTMENT
-					String degree = sc.next();
-
+					System.out.print("Enter the degree of the new manager : ( Avalable : 1.BSc , 2.MSc , 3.PhD ) ");
+					int choice = sc.nextInt();
+					
+					String degree = "";
+					
+					if(choice == 1) {
+						degree = "bsc";
+					}else if(choice == 2) {
+						degree = "msc";
+					}else if(choice == 3) {
+						degree = "phd";
+					}
+									
 					System.out.println(
 							"Enter the department of the new director: ( Available: Technical, Human resources, Business ) ");
 					String department = sc.next();
@@ -141,13 +150,11 @@ public class main {
 				break;
 			case (2):
 				// Print all employees
+				ReusaxCorp.Sort();
 				ReusaxCorp.printAllEmployees();
 
 				break;
 			case (3):
-
-				ReusaxCorp.Sort();
-
 				// Print specific employee
 				System.out.println("Enter the ID of the person whose info you want to print: ");
 				String id = sc.next();
@@ -181,7 +188,6 @@ public class main {
 				System.out.println("1. Change employee name ");
 				System.out.println("2. Change employee salary ");
 				System.out.println("3. Change jobspecific attributes (tex if its a manager u can change its degree)");
-				System.out.println("4. Change employee position in company (promote/demote)");
 
 				int userInp = sc.nextInt();
 
@@ -304,18 +310,23 @@ public class main {
 
 				break;
 			case (8):
-				// ??? what for??
-				// Print total expenses!!!
-				// TODO
+				// Print total expenses!!!	
+				ReusaxCorp.getTotalExpences();
 
 				break;
 			case (9):
 				// PRINT NUMBER OF EMPLOYEEES
-				// ??? what for??
-				// TODO
+				ReusaxCorp.getNumberOfEmployees();
 
 				break;
 			case (10):
+
+				// : Exits the program
+				//need to change this to show the before and after sorting in the console??
+				ReusaxCorp.Sort();
+
+				break;
+			case (11):
 
 				// : Exits the program
 				System.exit(0);

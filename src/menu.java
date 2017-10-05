@@ -7,7 +7,7 @@ public class menu {
 		
 				String aOrgin = "Welcome To";
 				String bOrgin = "Reusax Corporate";
-				String cOrgin = "A World Without Boudaries";
+				String cOrgin = "A World Without Boundaries";
 		
 				
 				String SpaceA = "";

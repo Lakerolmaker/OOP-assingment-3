@@ -53,8 +53,8 @@ public class Intern extends Employee implements EmployeeDefinition{
 	
 	@Override
 	public String toString() {
-		return "Intern id=" + super.getId() + ", employeeName=" + super.getEmployeeName() + ", grossSalary=" + super.getGrossSalary()
-				+ ", newGrossSalary=" + this.newGrossSalary + ", classification=" + this.classification + ", gpa=" + this.gpa;
+		return "Intern ID: " + super.getId() + ", Name: " + super.getEmployeeName() + ", Original Gross Salary: " + super.getGrossSalary()
+				+ ", Gross Salary Depending on GPA: " + this.getGrossSalary() + ", Classification: " + this.classification + ", GPA: " + this.gpa;
 	}
 	
 	

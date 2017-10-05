@@ -46,7 +46,7 @@ public class Employee implements EmployeeDefinition{
 
 	@Override
 	public String toString() {
-		return "Employee id: " + this.id + ", employee name: " + this.employeeName + ", gross salary: " + this.grossSalary;
+		return "Employee ID: " + this.id + ", Employee name: " + this.employeeName + ", Gross salary: " + this.grossSalary;
 	}
 
 	@Override

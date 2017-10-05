@@ -32,11 +32,11 @@ public class Manager extends Employee implements EmployeeDefinition{
 	
 	public double getManagerBonus() {
 		
-		if(degree.equals("BSc")) {
+		if(degree.equals("bsc")) {
 			bonus = super.getGrossSalary() * 0.1;
-		}else if(degree.equals("MSc")) {
+		}else if(degree.equals("msc")) {
 			bonus = super.getGrossSalary() * 0.2;
-		}else if(degree.equals("PhD")) {
+		}else if(degree.equals("phd")) {
 			bonus = super.getGrossSalary() * 0.35;
 		}
 		return bonus;
@@ -49,9 +49,9 @@ public class Manager extends Employee implements EmployeeDefinition{
 
 	@Override
 	public String toString() {
-		return "Manager id=" + super.getId() + ", employeeName=" + super.getEmployeeName() + ", grossSalary=" + super.getGrossSalary()
-				+ ", grossSalaryPlusBonus=" + this.grossSalaryPlusBonus + ", degree=" + this.degree + ", bonus=" + this.bonus
-				+ ", classification=" + this.classification;
+		return "Manager ID: " + super.getId() + ", Name: " + super.getEmployeeName() + ", Original Gross Salary: " + super.getGrossSalary()
+				+ ", Gross Salary after added bonus: " + this.getGrossSalary() + ", Degree: " + this.degree + ", Bonus: " + this.bonus
+				+ ", Classification: " + this.classification;
 	}
 	
 	

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import employees.*;
-import javafx.collections.ListChangeListener.Change;
+
 
 public class ReusaxCorp {
 
@@ -85,7 +85,7 @@ public class ReusaxCorp {
 
 			}
 
-		} else if (choice == 3) {
+		} else if (choice == 3) { //CHANGE JOB SPECIFIC ATTRIBUTES
 
 			for (int i = 0; i < companyEmployee.size(); i++) {
 
@@ -100,7 +100,8 @@ public class ReusaxCorp {
 			}
 
 			// : Change department for director
-		} else if (choice == 4) {
+		} 
+		else if (choice == 4) {
 
 			for (int i = 0; i < companyEmployee.size(); i++) {
 
@@ -139,10 +140,10 @@ public class ReusaxCorp {
 				}
 			}
 
-		} else if (choice == 7) {
-
-		} else if (choice == 8) {
-
+//		} else if (choice == 7) {
+//
+//		} else if (choice == 8) {
+//
 		}
 
 	}
@@ -217,17 +218,17 @@ public class ReusaxCorp {
 
 	
 
-	public static void getTotallExpences(String id) {
+	public static void getTotalExpences() {
 
-		double tottalMoney = 0;
+		double totalMoney = 0;
 
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
-			tottalMoney += castemployee.getGrossSalary();
+			totalMoney += castemployee.getGrossSalary();
 		}
 
-		main.print(" ------------------------------------ " + "\n" + " |  Total expenses : " + tottalMoney + "\n"
+		main.print(" ------------------------------------ " + "\n" + " |  Total expenses : " + totalMoney + "\n"
 				+ " ------------------------------------ " + "\n" + "\n");
 
 	}

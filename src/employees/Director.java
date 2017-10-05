@@ -1,10 +1,8 @@
 package employees;
 
-
-
 public class Director extends Manager implements EmployeeDefinition{ //MAKE IT EXTEND manager?
 	//need these attributes??
-	private double newGrossSalary;
+	private double newGrossSalary =  super.getGrossSalary() + directorsBenefit;
 	private String classification = "Director";
 	
 	//: So it´s the same
@@ -15,7 +13,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	public Director(String id, String employeeName, double grossSalary, String department, String degree) {
 		super(id, employeeName, grossSalary, degree);
 		
-		this.newGrossSalary = grossSalary ; 
+	//	this.newGrossSalary; 
 		this.department = department;
 		
 	}
@@ -39,7 +37,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	@Override
 	public double getGrossSalary() {
-		return newGrossSalary + directorsBenefit;
+		return newGrossSalary;
 	}
 
 	@Override
@@ -65,6 +63,10 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 		
 	}
 	
+//	public double getNewGrossSalary() {
+//		return newGrossSalary;
+//	}
+	
 	@Override
 	public String getClassification() {
 		return this.classification;
@@ -72,10 +74,11 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 
 	@Override
 	public String toString() {
-		return "Director id=" + super.getId() + ", employeeName=" + super.getEmployeeName() + ", grossSalary=" + super.getGrossSalary()
-				+ ", newGrossSalary=" + this.newGrossSalary + ", classification=" + this.classification + ", department="
+		return "Director ID: " + super.getId() + ", Name: " + super.getEmployeeName() + ", Gross salary with bonus: " + this.getGrossSalary() + ", Classification: " + this.classification + ", Department: "
 				+ this.department;
 	}
+
+	
 
 	
 	
