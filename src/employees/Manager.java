@@ -27,7 +27,7 @@ public class Manager extends Employee implements EmployeeDefinition{
 	}
 	
 	public double getGrossSalary() {
-		return super.getGrossSalary() + bonus;
+		return super.getGrossSalary() + getManagerBonus();
 	}
 	
 	public double getManagerBonus() {
