@@ -10,9 +10,8 @@ public class main {
 
 		menu.printLogo();
 
-		// : While-loop that keeps the progrm running forever.
+		// : While-loop that keeps the program running forever.
 		while (true) {
-
 			// : Dispalys the menu
 			System.out.print("" + " ------------------------------------------ " + "\n"
 					+ " |                 Menu                   | " + "\n"
@@ -49,7 +48,7 @@ public class main {
 			}
 
 			switch (input) {
-
+			
 			case (1):
 
 				System.out.print("Enter the ID of the new employee: ");
@@ -283,8 +282,7 @@ public class main {
 					}
 
 				}
-				//
-
+			
 				break;
 			case (6):
 				System.out.println("Enter the ID of the employee you want to change position: ");
@@ -385,15 +383,12 @@ public class main {
 						+ "\n" + " ------------------------------------ " + "\n" + "\n");
 
 				break;
-
 			}
-
 		}
 	}
 
 	public static void print(Object o) {
 		System.out.print(o);
-
 	}
 
 	public static void cls() {
@@ -401,5 +396,4 @@ public class main {
 			print("\n");
 		}
 	}
-
 }
