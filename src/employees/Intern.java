@@ -27,11 +27,11 @@ public class Intern extends Employee implements EmployeeDefinition{
 
 	public double getGrossSalary() {
 		
-		if (gpa <= 5) { // have this.getgpa() instead?
+		if (this.gpa <= 5) { // have this.getgpa() instead?
 			newGrossSalary = 0; 
-		} else if (gpa > 5 && gpa < 8) {
+		} else if (this.gpa > 5 && gpa < 8) {
 			newGrossSalary = super.getGrossSalary();
-		} else if (gpa >= 8) {
+		} else if (this.gpa >= 8) {
 			int bonus = 1000;
 			newGrossSalary = super.getGrossSalary() + bonus;	
 		} 

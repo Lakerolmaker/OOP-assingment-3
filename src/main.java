@@ -190,14 +190,15 @@ public class main {
 				int userInp = sc.nextInt();
 
 				if (userInp == 1) {
-					System.out.println("Enter the new name of the employee: ");
-					// Scanner nameScanner = new Scanner(System.in);
-					String employeeName = sc.nextLine();
+					System.out.print("Enter the new name of the employee: ");
+					Scanner nameScanner = new Scanner(System.in);
+					String employeeName = nameScanner.nextLine();
 					ReusaxCorp.updateEmployee(idChange, 1, employeeName);
 
 				} else if (userInp == 2) {
-					System.out.println("Enter the new salary of the employee: ");
-					double grossSalary = sc.nextDouble();
+					System.out.print("Enter the new salary of the employee: ");
+					Scanner salaryScanner = new Scanner(System.in);
+					double grossSalary = salaryScanner.nextDouble();
 					ReusaxCorp.updateEmployee(idChange, 2, grossSalary);
 
 				} else if (userInp == 3) {
