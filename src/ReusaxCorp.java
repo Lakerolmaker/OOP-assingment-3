@@ -295,13 +295,10 @@ public class ReusaxCorp {
 	public static void Sort() {
 
 		for (int i = 0; i < companyEmployee.size(); i++) {
-
 			for (int z = i; z < companyEmployee.size(); z++) {
-
 				// : Gets the name of the employees
 				String compare1 = ((EmployeeDefinition) companyEmployee.get(i)).getEmployeeName().toString();
 				String compare2 = ((EmployeeDefinition) companyEmployee.get(z)).getEmployeeName().toString();
-
 				// : compares the two
 				int compare = compare1.compareTo(compare2);
 				if (compare < 0) {
@@ -314,7 +311,6 @@ public class ReusaxCorp {
 				} else {
 					// : If a is compare1 is the same as compare2
 					// : Checks the gross income
-
 					// : Gets the name of the employees
 					double compareInt1 = ((EmployeeDefinition) companyEmployee.get(i)).getGrossSalary();
 					double compareInt2 = ((EmployeeDefinition) companyEmployee.get(z)).getGrossSalary();
@@ -324,13 +320,9 @@ public class ReusaxCorp {
 						// : Swaps the elements
 						Collections.swap(companyEmployee, i, z);
 					}
-
 				}
-
 			}
-
 		}
-
 	}
 	//END sorting algorithm//
 
@@ -345,7 +337,6 @@ public class ReusaxCorp {
 			if (castemployee.getId().equals(id))
 				found = true;
 		}
-
 		return found;
 	}
 
@@ -359,11 +350,7 @@ public class ReusaxCorp {
 
 			if (castemployee.getId().equals(id))
 				returnEmployee = castemployee;
-
 		}
-
 		return returnEmployee;
-
 	}
-
 }
