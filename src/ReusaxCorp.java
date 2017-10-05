@@ -25,7 +25,7 @@ public class ReusaxCorp {
 			main.print("\n");
 			main.print(" --------------------------- " + "\n");
 			main.print(" ID : " + castemployee.getId() + "\n");
-			main.print(" Clasification : " + castemployee.getClassification() + "\n");
+			main.print(" Classification : " + castemployee.getClassification() + "\n");
 			main.print(" Name : " + castemployee.getEmployeeName() + "\n");
 			main.print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
 			main.print(" Net Salary : " + castemployee.getNetSalary() + "\n");

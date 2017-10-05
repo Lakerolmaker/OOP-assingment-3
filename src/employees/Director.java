@@ -32,7 +32,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	@Override
 	public double getGrossSalary() {
-		return super.getGrossSalary() + super.getManagerBonus() + directorsBenefit;
+		return super.getGrossSalary() + directorsBenefit;
 	}
 
 	@Override
