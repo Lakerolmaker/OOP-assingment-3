@@ -1,9 +1,10 @@
 
-public class menu {
+public class Menu {
 
 	
 	public static void printLogo() {
 		
+				Main main = new Main();
 		
 				String aOrgin = "Welcome To";
 				String bOrgin = "Reusax Corporate";

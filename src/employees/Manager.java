@@ -10,17 +10,14 @@ public class Manager extends Employee implements EmployeeDefinition {
 
 	public Manager(String id, String employeeName, double grossSalaryInput, String degree) {
 		super(id, employeeName, grossSalaryInput);
-
 		this.grossSalary = grossSalaryInput;
 		this.degree = degree;
 		this.bonus = getManagerBonus();
-
 	}
 
 	public String getDegree() {
 		return degree;
 	}
-
 	public void setDegree(String degree) {
 		this.degree = degree;
 		this.bonus = getManagerBonus();
@@ -29,9 +26,13 @@ public class Manager extends Employee implements EmployeeDefinition {
 	public double getGrossSalary() {
 		return super.getGrossSalary() + getManagerBonus();
 	}
+	
+	public double getNetSalary() { 
+		double netSalary = this.getGrossSalary() - (this.getGrossSalary() * 0.1);
+		return netSalary;
+	}
 
 	public double getManagerBonus() {
-
 		if (degree.equals("bsc")) {
 			bonus = super.getGrossSalary() * 0.1;
 		} else if (degree.equals("msc")) {
@@ -52,13 +53,5 @@ public class Manager extends Employee implements EmployeeDefinition {
 		return "Manager ID: " + super.getId() + ", Name: " + super.getEmployeeName() + ", Original Gross Salary: "
 				+ super.getGrossSalary() + ", Gross Salary after added bonus: " + this.getGrossSalary() + ", Degree: "
 				+ this.degree + ", Bonus: " + this.bonus + ", Classification: " + this.classification;
-	}
-
-	public double getNetSalary() { //ADDED THIS
-
-		double netSalary = this.getGrossSalary() - (this.getGrossSalary() * 0.1);
-
-		return netSalary;
-	}
-
+	}	
 }

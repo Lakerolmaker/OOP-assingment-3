@@ -7,16 +7,18 @@ import employees.*;
 
 public class ReusaxCorp {
 	
+	Main main = new Main();
+	
 	// ARRAYLIST TO HOLD ALL EMPLOYEES IN THE COMPANY
-	private static ArrayList<Object> companyEmployee = new ArrayList<Object>(); // should it be of object or of
+	private ArrayList<Object> companyEmployee = new ArrayList<Object>(); // should it be of object or of
 
 	// 1. CREATE AN EMPLOYEE
-	public static void registerEmployee(Object newRecruit) {
+	public void registerEmployee(Object newRecruit) {
 		companyEmployee.add(newRecruit);
 	}
 
 	// 2. PRINT ALL EMPLOYEES
-	public static void printAllEmployees() {
+	public void printAllEmployees() {
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
@@ -35,7 +37,7 @@ public class ReusaxCorp {
 	}
 
 	// 3. PRINT A SPECIFIC EMPLOYEE
-	public static void printEmployee(String id) {
+	public void printEmployee(String id) {
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
@@ -70,7 +72,7 @@ public class ReusaxCorp {
 	//END PRINT SPECIFIC EMPLOYEE//
 
 	// 4. REMOVE AN EMPLOYEE
-	public static void removeEmployee(String id) {
+	public void removeEmployee(String id) {
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
@@ -84,7 +86,7 @@ public class ReusaxCorp {
 	//END REMOVE AN EMPLOYEE//
 
 	// 5. UPDATE AN EMPLOYEE
-	public static void updateEmployee(String id, int choice, Object Change) {
+	public void updateEmployee(String id, int choice, Object Change) {
 		if (choice == 1) { // CHANGE THE NAME
 			for (int i = 0; i < companyEmployee.size(); i++) {
 
@@ -193,18 +195,13 @@ public class ReusaxCorp {
 					companyEmployee.set(i, UpdatedCast);
 				}
 			}
-
-			// } else if (choice == 7) {
-			//
-			// } else if (choice == 8) {
-			//
 		}
 
 	}
 	//END UPDATE EMPLOYEE//
 
 	// 6. PROMOTE/DEMOTE EMPLOYEE - 4 methods //
-	public static void promoteToEmployee(String id) {
+	public void promoteToEmployee(String id) {
 		// castEmployee = ((Employee) castEmployee); // ???
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
@@ -217,7 +214,7 @@ public class ReusaxCorp {
 			}
 		}
 	}
-	public static void promoteToIntern(String id, int gpa) {
+	public void promoteToIntern(String id, int gpa) {
 		for (int i = 0; i < companyEmployee.size(); i++) {
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
 
@@ -229,7 +226,7 @@ public class ReusaxCorp {
 			}
 		}
 	}
-	public static void promoteToMananger(String id, String degree) {
+	public void promoteToMananger(String id, String degree) {
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
@@ -243,7 +240,7 @@ public class ReusaxCorp {
 			}
 		}
 	}
-	public static void promoteToDirector(String id, String degree, String department) {
+	public void promoteToDirector(String id, String degree, String department) {
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
@@ -260,7 +257,7 @@ public class ReusaxCorp {
 	//END PROMOTE/DEMOTE EMPLOYEE - 4 methods//
 
 	// 7. SET DIRECTORS BENEFIT
-	public static void setDirectorBenefits(double amount) {
+	public void setDirectorBenefits(double amount) {
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
 			if (companyEmployee.get(i) instanceof Director) {
@@ -271,7 +268,7 @@ public class ReusaxCorp {
 	}
 
 	// 8. PRINT TOTAL EXPENSES FOR THE COMPANY
-	public static double getTotalExpences() {
+	public double getTotalExpences() {
 
 		double totalMoney = 0;
 
@@ -285,13 +282,13 @@ public class ReusaxCorp {
 	}
 
 	// 9. PRINT TOTAL NUMBER OF EMPLOYEES
-	public static int getNumberOfEmployees() {
+	public int getNumberOfEmployees() {
 		return companyEmployee.size();
 
 	}
 
 	// : Sorting algorithm
-	public static void Sort() {
+	public void Sort() {
 		//: Pointer
 		for (int i = 0; i < companyEmployee.size(); i++) {
 			
@@ -329,7 +326,7 @@ public class ReusaxCorp {
 	//END sorting algorithm//
 
 	
-	public static void swap(int a , int b) {
+	public void swap(int a , int b) {
 		
 		Object temp = companyEmployee.get(a);
 		companyEmployee.set(a, companyEmployee.get(b));
@@ -337,7 +334,7 @@ public class ReusaxCorp {
 		
 	}
 	
-	public static boolean findEmployee(String id) {
+	public boolean findEmployee(String id) {
 
 		boolean found = false;
 
@@ -351,7 +348,7 @@ public class ReusaxCorp {
 		return found;
 	}
 
-	public static EmployeeDefinition getEmployee(String id) {
+	public EmployeeDefinition getEmployee(String id) {
 
 		EmployeeDefinition returnEmployee = null;
 

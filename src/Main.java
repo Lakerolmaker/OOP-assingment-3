@@ -2,12 +2,15 @@ import java.util.Scanner;
 
 import employees.*;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		Menu menu = new Menu();
+		ReusaxCorp reusaxCorp = new ReusaxCorp();
+		Main main = new Main();
+		
 		menu.printLogo();
 		
 		// : While-loop that keeps the program running forever.
@@ -51,16 +54,14 @@ public class main {
 			switch (input) {
 			
 			case (1):
-
 				System.out.print("Enter the ID of the new employee: ");
 				String employeeId = sc.next();
 
-				if (ReusaxCorp.findEmployee(employeeId) == true) {
+				if (reusaxCorp.findEmployee(employeeId) == true) {
 
 					print("\n ------------------------------------ " + "\n" 
 					      + " |     Error , ID already in use   | "+ "\n"
 						+ " ------------------------------------ " + "\n" + "\n");
-
 					// :Exits back to the main menu
 					break;
 				}
@@ -76,7 +77,7 @@ public class main {
 					double employeesalary = sc.nextDouble();
 
 					Employee createdEmpoyee = new Employee(employeeId, employeeName, employeesalary);
-					ReusaxCorp.registerEmployee(createdEmpoyee);
+					reusaxCorp.registerEmployee(createdEmpoyee);
 
 				} else if (employeePosition == 2) {
 
@@ -88,7 +89,7 @@ public class main {
 					int gpa = sc.nextInt();
 
 					Intern createdEmpoyee = new Intern(employeeId, employeeName, employeesalary, gpa);
-					ReusaxCorp.registerEmployee(createdEmpoyee);
+					reusaxCorp.registerEmployee(createdEmpoyee);
 
 				} else if (employeePosition == 3) {
 
@@ -110,7 +111,7 @@ public class main {
 					}
 
 					Manager createdEmpoyee = new Manager(employeeId, employeeName, employeesalary, degree);
-					ReusaxCorp.registerEmployee(createdEmpoyee);
+					reusaxCorp.registerEmployee(createdEmpoyee);
 					
 				} else if (employeePosition == 4) {
 
@@ -136,46 +137,43 @@ public class main {
 					String department = sc.next();
 
 					Director createdEmpoyee = new Director(employeeId, employeeName, employeesalary, department, degree);
-					ReusaxCorp.registerEmployee(createdEmpoyee);
+					reusaxCorp.registerEmployee(createdEmpoyee);
 
 					main.print( "\n" +
 							" ------------------------------------ " + "\n" 
 					      + " |     Success , employee created   | " + "\n"
 						  + " ------------------------------------ " + "\n" + "\n");
 				}
-
 				break;
+				
 			case (2):
 				// Print all employees sorted
-				ReusaxCorp.printAllEmployees();
-
+				reusaxCorp.printAllEmployees();
 				break;
+				
 			case (3):
 				// Print specific employee
 				System.out.println("Enter the ID of the employee whose info you want to print: ");
 				String id = sc.next();
-				ReusaxCorp.printEmployee(id);
-
+				reusaxCorp.printEmployee(id);
 				break;
+				
 			case (4):
 				// Remove employee
 				System.out.println("Enter the ID of the employee whom you want to remove: ");
 				id = sc.next(); // ??
-				ReusaxCorp.removeEmployee(id);
-
+				reusaxCorp.removeEmployee(id);
 				break;
+				
 			case (5):
 				// Update an employee
 				System.out.println("Enter the ID of the employee you want to update:");
 				String idChange = sc.next();
-
 				// : Checks of the employee exits
-				if (ReusaxCorp.findEmployee(idChange) == false) {
-
+				if (reusaxCorp.findEmployee(idChange) == false) {
 					print(" ------------------------------------ " + "\n" 
 					    + " |     Error , employee not found   | " + "\n"
 					    + " ------------------------------------ " + "\n" + "\n");
-
 					// :Exits back to the main menu
 					break;
 				}
@@ -191,20 +189,17 @@ public class main {
 					System.out.print("Enter the new name of the employee: ");
 					Scanner nameScanner = new Scanner(System.in);
 					String employeeName = nameScanner.nextLine();
-					ReusaxCorp.updateEmployee(idChange, 1, employeeName);
+					reusaxCorp.updateEmployee(idChange, 1, employeeName);
 
 				} else if (userInp == 2) {
 					System.out.print("Enter the new salary of the employee: ");
 					Scanner salaryScanner = new Scanner(System.in);
 					double grossSalary = salaryScanner.nextDouble();
-					ReusaxCorp.updateEmployee(idChange, 2, grossSalary);
+					reusaxCorp.updateEmployee(idChange, 2, grossSalary);
 
 				} else if (userInp == 3) {
 
-					///////// CHANGE THIS///////////
-					/// Make if else statements depending of what classification the specified ID
-					///////// has
-					String EmployeeClass =  ReusaxCorp.getEmployee(idChange).getClassification();
+					String EmployeeClass =  reusaxCorp.getEmployee(idChange).getClassification();
 					
 					if (EmployeeClass == "Director") {
 						// companyEmployee= new Director(companyEmployee);
@@ -216,7 +211,6 @@ public class main {
 
 						if (directorScan == 1) {
 							System.out.println("Input new degree: (Available: 1.BSc 2.MSc 3.PhD) ");
-							// Scanner degreeScan = new Scanner(System.in);
 							String degreeInput = "";
 							int choice = sc.nextInt();
 
@@ -228,14 +222,13 @@ public class main {
 								degreeInput = "phd";
 							}
 
-							ReusaxCorp.updateEmployee(idChange, 3, degreeInput);
+							reusaxCorp.updateEmployee(idChange, 3, degreeInput);
 
 						} else if (directorScan == 2) {
 							System.out.println("Input new department : ");
 							Scanner depertmentScan = new Scanner(System.in);
 							String depertmentInput = depertmentScan.nextLine();
-							ReusaxCorp.updateEmployee(idChange, 4, depertmentInput);
-
+							reusaxCorp.updateEmployee(idChange, 4, depertmentInput);
 						}
 
 					} else if (EmployeeClass == "Manager") {
@@ -257,8 +250,7 @@ public class main {
 							} else if (choice == 3) {
 								degreeInput = "phd";
 							}
-
-							ReusaxCorp.updateEmployee(idChange, 5, degreeInput);
+							reusaxCorp.updateEmployee(idChange, 5, degreeInput);
 						}
 
 					} else if (EmployeeClass == "Intern") {
@@ -272,14 +264,12 @@ public class main {
 							System.out.println("Input new GPA (Number between 1 to 10): ");
 							// Scanner GpaScan = new Scanner(System.in);
 							int gpaInpiut = sc.nextInt();
-							ReusaxCorp.updateEmployee(idChange, 6, gpaInpiut);
+							reusaxCorp.updateEmployee(idChange, 6, gpaInpiut);
 						}
-
 					}
-
 				}
-			
 				break;
+				
 			case (6):
 				System.out.println("Enter the ID of the employee you want to change position: ");
 				id = sc.next(); // make a methods to fetch the object
@@ -290,13 +280,13 @@ public class main {
 				// ReusaxCorp.updateEmployee(employeeId, newPosition);
 				if (newPosition == 1) { // regular
 					// put fetched object here
-					ReusaxCorp.promoteToEmployee(id);
+					reusaxCorp.promoteToEmployee(id);
 					System.out.println("Changed to regular employee");
 
 				} else if (newPosition == 2) {// intern
 					System.out.println("Enter the GPA of the intern (number between 0-10");
 					int gpa = sc.nextInt();
-					ReusaxCorp.promoteToIntern(id, gpa);
+					reusaxCorp.promoteToIntern(id, gpa);
 					System.out.println("Changed to intern");
 
 				} else if (newPosition == 3) {// manager
@@ -313,7 +303,7 @@ public class main {
 						degree = "phd";
 					}
 
-					ReusaxCorp.promoteToMananger(id, degree);
+					reusaxCorp.promoteToMananger(id, degree);
 					System.out.println("Changed to manager");
 
 				} else if (newPosition == 4) {// director
@@ -334,66 +324,57 @@ public class main {
 					System.out.println(
 							"Enter the department of the director : ( Available: Technical, Human resources, Business )");
 					String department = sc.next();
-					ReusaxCorp.promoteToDirector(id, degree, department);
+					reusaxCorp.promoteToDirector(id, degree, department);
 					System.out.println("Changed to director");
-
 				}
-
 				break;
+				
 			case (7):
-
-				// TODO
-				// Set directors benefit
 				System.out.print("Enter the new directors benefit: ");
 				double amount = sc.nextDouble();
-				ReusaxCorp.setDirectorBenefits(amount);
-				
+				reusaxCorp.setDirectorBenefits(amount);	
 				   		print("\n" +
 				   			  " ------------------------------------ " + "\n" 
 						    + " |  Success , Director Benefits set | " + "\n"
 						    + " ------------------------------------ " + "\n" + "\n");
-
 				break;
+				
 			case (8):
 				// Print total expenses!!!
-				Double totalMoney = ReusaxCorp.getTotalExpences();
+				Double totalMoney = reusaxCorp.getTotalExpences();
 			
 				main.print(" ------------------------------------ " + "\n" 
 					+ " |  Total expenses : " + totalMoney + "\n"
 					+ " ------------------------------------ " + "\n" + "\n");
-
 				break;
+				
 			case (9):
 				// PRINT NUMBER OF EMPLOYEEES
-			int companySize = ReusaxCorp.getNumberOfEmployees();
+			int companySize = reusaxCorp.getNumberOfEmployees();
 
 			print(" --------------------------- " + "\n");
 			print(" Number of employees : " + companySize);
-			print(" --------------------------- " + "\n");
-			
-			
+			print(" --------------------------- " + "\n");	
 				break;
+				
 			case (10): 
 
-				ReusaxCorp.Sort();
+				reusaxCorp.Sort();
 			
 			    print(" ------------------------------------ " + "\n" 
 				    + " |         Employees Sorted         | " + "\n"
 				    + " ------------------------------------ " + "\n" + "\n");
-
 				break;
+				
 			case (11):
-
 				// : Exits the program
 				System.exit(0);
-
 				break;
+				
 				default:
-
 				print("\n" + " ------------------------------------ " + "\n" 
 				           + " |    Error , not a valid option    | " + "\n"
 					       + " ------------------------------------ " + "\n" + "\n");
-
 				break;
 			}
 		}
