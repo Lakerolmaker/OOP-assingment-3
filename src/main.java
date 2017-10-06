@@ -8,17 +8,7 @@ public class main {
 
 		Scanner sc = new Scanner(System.in);
 
-		//menu.printLogo();
-		
-		
-		Employee employ1 = new Employee("1", "a", 1);
-		Employee employ2 = new Employee("2", "a", 2);
-
-		Employee employ3 = new Employee("3", "a", 3);
-
-		ReusaxCorp.registerEmployee(employ1);
-		ReusaxCorp.registerEmployee(employ3);
-		ReusaxCorp.registerEmployee(employ2);
+		menu.printLogo();
 		
 		// : While-loop that keeps the program running forever.
 		while (true) {
