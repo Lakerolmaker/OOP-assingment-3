@@ -4,7 +4,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	
 	private String classification = "Director";
 
-	private static double directorsBenefit; 
+	private double directorsBenefit; 
 	
 	private String department; 
 
@@ -19,7 +19,7 @@ public class Director extends Manager implements EmployeeDefinition{ //MAKE IT E
 	}
 	
 	public void setDirectorsBenefit(double directorsBenefits) {
-		directorsBenefit = directorsBenefits;
+		this.directorsBenefit = directorsBenefits;
 	}
 	
 	public String getDepartment() {
