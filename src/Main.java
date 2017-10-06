@@ -341,11 +341,22 @@ public class Main {
 				
 			case (8):
 				// Print total expenses!!!
-				Double totalMoney = reusaxCorp.getTotalExpences();
-			
-				main.print(" ------------------------------------ " + "\n" 
-					+ " |  Total expenses : " + totalMoney + "\n"
-					+ " ------------------------------------ " + "\n" + "\n");
+				System.out.println("What do you want to check?");
+				System.out.println("1. Total gross 2. Total net");
+				int choice = sc.nextInt();
+				
+				if(choice == 1) {
+					Double totalGross = reusaxCorp.getTotalExpences();	
+					main.print(" ------------------------------------ " + "\n" 
+						+ " |  Total expenses : " + totalGross + "\n"
+						+ " ------------------------------------ " + "\n" + "\n");		
+					
+				}else if(choice == 2) {
+					Double totalNet = reusaxCorp.getTotalNet();	
+					main.print(" ------------------------------------ " + "\n" 
+							+ " |  Total expenses : " + totalNet + "\n"
+							+ " ------------------------------------ " + "\n" + "\n");	
+				}			
 				break;
 				
 			case (9):

@@ -280,6 +280,18 @@ public class ReusaxCorp {
 		return totalMoney;
 		
 	}
+	public double getTotalNet() {
+
+		double totalMoney = 0;
+
+		for (int i = 0; i < companyEmployee.size(); i++) {
+			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+			totalMoney += castemployee.getNetSalary();
+		}
+		
+		return totalMoney;
+		
+	}
 
 	// 9. PRINT TOTAL NUMBER OF EMPLOYEES
 	public int getNumberOfEmployees() {
