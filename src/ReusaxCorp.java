@@ -11,7 +11,7 @@ public class ReusaxCorp {
 	private static ArrayList<Object> companyEmployee = new ArrayList<Object>(); // should it be of object or of
 
 	// 1. CREATE AN EMPLOYEE
-	public static void registerEmployee(Employee newRecruit) {
+	public static void registerEmployee(Object newRecruit) {
 		companyEmployee.add(newRecruit);
 	}
 
@@ -292,9 +292,10 @@ public class ReusaxCorp {
 
 	// : Sorting algorithm
 	public static void Sort() {
-
+		//: Pointer
 		for (int i = 0; i < companyEmployee.size(); i++) {
-			for (int z = i; z < companyEmployee.size(); z++) {
+			
+			for (int z = i + 1; z < companyEmployee.size(); z++) {
 				// : Gets the name of the employees
 				String compare1 = ((EmployeeDefinition) companyEmployee.get(i)).getEmployeeName().toString();
 				String compare2 = ((EmployeeDefinition) companyEmployee.get(z)).getEmployeeName().toString();
@@ -306,7 +307,7 @@ public class ReusaxCorp {
 				} else if (compare > 0) {
 					// : If a is compare2 is bigger than compare1
 					// : Swaps the elements
-					Collections.swap(companyEmployee, i, z);
+					swap(z , i);
 				} else {
 					// : If a is compare1 is the same as compare2
 					// : Checks the gross income
@@ -317,7 +318,9 @@ public class ReusaxCorp {
 					if (compareInt2 > compareInt1) {
 						// : If a is compare2 is bigger than compare1
 						// : Swaps the elements
-						Collections.swap(companyEmployee, i, z);
+						main.print("hello");
+						swap(z , i);
+						main.print("hello");
 					}
 				}
 			}
@@ -325,6 +328,15 @@ public class ReusaxCorp {
 	}
 	//END sorting algorithm//
 
+	
+	public static void swap(int a , int b) {
+		
+		Object temp = companyEmployee.get(a);
+		companyEmployee.set(a, companyEmployee.get(b));
+		companyEmployee.set(b, temp);
+		
+	}
+	
 	public static boolean findEmployee(String id) {
 
 		boolean found = false;
