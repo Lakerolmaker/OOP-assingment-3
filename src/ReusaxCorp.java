@@ -19,21 +19,15 @@ public class ReusaxCorp {
 
 	// 2. PRINT ALL EMPLOYEES
 	public void printAllEmployees() {
+
 		for (int i = 0; i < companyEmployee.size(); i++) {
 
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
+			
+			print ("\n" + castemployee.toString() );
 
-			// : prints the user to the console
-			print("\n");
-			print(" --------------------------- " + "\n");
-			print(" ID : " + castemployee.getId() + "\n");
-			print(" Classification : " + castemployee.getClassification() + "\n");
-			print(" Name : " + castemployee.getEmployeeName() + "\n");
-			print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
-			print(" Net Salary : " + castemployee.getNetSalary() + "\n");
 		}
-		print(" --------------------------- " + "\n");
-		print("\n");
+	
 	}
 
 	// 3. PRINT A SPECIFIC EMPLOYEE
@@ -63,6 +57,7 @@ public class ReusaxCorp {
 					Director UpdatedCast = (Director) companyEmployee.get(i);
 					print(UpdatedCast.toString() + "\n");
 				}
+				
 				print(" --------------------------- " + "\n");
 				print("\n");
 				return;
@@ -337,7 +332,7 @@ public class ReusaxCorp {
 	}
 	//END sorting algorithm//
 
-	
+	//: Swaps two elements in the array
 	public void swap(int a , int b) {
 		
 		Object temp = companyEmployee.get(a);
@@ -346,6 +341,7 @@ public class ReusaxCorp {
 		
 	}
 	
+	//: a fuctions if an employee exists
 	public boolean findEmployee(String id) {
 
 		boolean found = false;
@@ -360,6 +356,7 @@ public class ReusaxCorp {
 		return found;
 	}
 
+	//: gets an employee 
 	public EmployeeDefinition getEmployee(String id) {
 
 		EmployeeDefinition returnEmployee = null;
@@ -374,6 +371,7 @@ public class ReusaxCorp {
 		return returnEmployee;
 	}
 	
+	//: prints in the console
 	public void print(Object o) {
 		System.out.print(o);
 	}

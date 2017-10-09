@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import employees.*;
@@ -6,12 +7,19 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		//: The scanner used in the menu
 		Scanner sc = new Scanner(System.in);
-		Menu menu = new Menu();
-		ReusaxCorp reusaxCorp = new ReusaxCorp();
-		Main main = new Main();
 		
+		// The different class files used for changeing the files
+		//: The menu class
+		Menu menu = new Menu();
+		//: The class that handles all the functionality
+		ReusaxCorp reusaxCorp = new ReusaxCorp();
+		
+		//: Calls the menu annimation
 		menu.printLogo();
+		
+		Main main = new Main();
 		
 		// : While-loop that keeps the program running forever.
 		while (true) {
@@ -51,8 +59,10 @@ public class Main {
 			} catch (Exception e) {
 			}
 
+			//: Switch that handles all the cases
 			switch (input) {
-			
+
+			//: New employee
 			case (1):
 				System.out.print("Enter the ID of the new employee: ");
 				String employeeId = sc.next();
@@ -139,34 +149,39 @@ public class Main {
 					Director createdEmpoyee = new Director(employeeId, employeeName, employeesalary, department, degree);
 					reusaxCorp.registerEmployee(createdEmpoyee);
 
-					main.print( "\n" +
+					print( "\n" +
 							" ------------------------------------ " + "\n" 
 					      + " |     Success , employee created   | " + "\n"
 						  + " ------------------------------------ " + "\n" + "\n");
 				}
 				break;
 				
+			//: Prints all employees
 			case (2):
+				
 				// Print all employees sorted
 				reusaxCorp.printAllEmployees();
+			
 				break;
 				
+			//: Prints a specific employee
 			case (3):
-				// Print specific employee
 				System.out.println("Enter the ID of the employee whose info you want to print: ");
 				String id = sc.next();
 				reusaxCorp.printEmployee(id);
 				break;
-				
+
+			// Remove an employee
 			case (4):
-				// Remove employee
+			
 				System.out.println("Enter the ID of the employee whom you want to remove: ");
 				id = sc.next(); // ??
 				reusaxCorp.removeEmployee(id);
 				break;
 				
+			// Update an employee
 			case (5):
-				// Update an employee
+				
 				System.out.println("Enter the ID of the employee you want to update:");
 				String idChange = sc.next();
 				// : Checks of the employee exits
@@ -269,7 +284,8 @@ public class Main {
 					}
 				}
 				break;
-				
+			
+			// Promotion
 			case (6):
 				System.out.println("Enter the ID of the employee you want to change position: ");
 				id = sc.next(); // make a methods to fetch the object
@@ -328,7 +344,8 @@ public class Main {
 					System.out.println("Changed to director");
 				}
 				break;
-				
+			
+			// : Change director bennefits
 			case (7):
 				System.out.print("Enter the new directors benefit: ");
 				double amount = sc.nextDouble();
@@ -339,6 +356,7 @@ public class Main {
 						    + " ------------------------------------ " + "\n" + "\n");
 				break;
 				
+			// : Prints totall expeonses
 			case (8):
 				// Print total expenses!!!
 				System.out.println("What do you want to check?");
@@ -347,18 +365,19 @@ public class Main {
 				
 				if(choice == 1) {
 					Double totalGross = reusaxCorp.getTotalExpences();	
-					main.print(" ------------------------------------ " + "\n" 
+					print(" ------------------------------------ " + "\n" 
 						+ " |  Total expenses : " + totalGross + "\n"
 						+ " ------------------------------------ " + "\n" + "\n");		
 					
 				}else if(choice == 2) {
 					Double totalNet = reusaxCorp.getTotalNet();	
-					main.print(" ------------------------------------ " + "\n" 
+					print(" ------------------------------------ " + "\n" 
 							+ " |  Total expenses : " + totalNet + "\n"
 							+ " ------------------------------------ " + "\n" + "\n");	
 				}			
 				break;
 				
+			//: Prints number of employees
 			case (9):
 				// PRINT NUMBER OF EMPLOYEEES
 			int companySize = reusaxCorp.getNumberOfEmployees();
@@ -368,6 +387,7 @@ public class Main {
 			print(" --------------------------- " + "\n");	
 				break;
 				
+			//: Sorts employees
 			case (10): 
 
 				reusaxCorp.Sort();
@@ -376,7 +396,8 @@ public class Main {
 				    + " |         Employees Sorted         | " + "\n"
 				    + " ------------------------------------ " + "\n" + "\n");
 				break;
-				
+			
+			//: Exits the program
 			case (11):
 				// : Exits the program
 				System.exit(0);
