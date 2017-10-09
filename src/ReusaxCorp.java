@@ -6,13 +6,26 @@ import java.util.Collections;
 
 import employees.*;
 
+// LUKAS was of telling it : 
+
 //COMMENTS FOR PROMOTE/DEMOTE EMPLOYEE://
 ///PROMOTE DEMOTE METHODS (4 of them) COMMENTS: SINCE DOWNCASTING IS RISKY, 
 //I THINK THIS IS A GOOD OPTION CAUSE WE ARE NOT USING ANY DOWNCASTING 
-///AND NO UPCASTING EITHER). THIS IS ALSO NICE CUZ IT DOESNT MATTER WHAT THE TYPE WAS PREVIOUSLY,
+///AND NO UPCASTING EITHER). THIS IS ALSO NICE CAUSE IT DOESNT MATTER WHAT THE TYPE WAS PREVIOUSLY,
 //WE CAN CHANGE IT EASILY ANYWAY. 
 //BAD THING IS THAT EVERY TIME WE ARE CREATING A NEW OBJECT AND DELETING AN OLD ONE, 
 //INSTEAD OF JUST KEEPING THE SAME OBJECT AROUND, NOT DELETING IT BUT JUST CHANGING IT
+
+//: JACOBs addition :
+
+//: The benefits of having it the way we are is as follows :
+//: It´s safe , and we don´t risk it not working if we add stuff
+//: Its also scalable and you can chose what stuff gets cast.
+
+//: The downside of doing it is at follows :
+// if the code is changed it´s gonna be hard to fix it.
+// you don´t get the new changes if the code is altered
+
 
 /*
  * THE REUSAXCLASS CODE IN GENERAL:
