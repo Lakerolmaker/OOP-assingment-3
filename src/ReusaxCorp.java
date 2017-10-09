@@ -24,16 +24,16 @@ public class ReusaxCorp {
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
 
 			// : prints the user to the console
-			main.print("\n");
-			main.print(" --------------------------- " + "\n");
-			main.print(" ID : " + castemployee.getId() + "\n");
-			main.print(" Classification : " + castemployee.getClassification() + "\n");
-			main.print(" Name : " + castemployee.getEmployeeName() + "\n");
-			main.print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
-			main.print(" Net Salary : " + castemployee.getNetSalary() + "\n");
+			print("\n");
+			print(" --------------------------- " + "\n");
+			print(" ID : " + castemployee.getId() + "\n");
+			print(" Classification : " + castemployee.getClassification() + "\n");
+			print(" Name : " + castemployee.getEmployeeName() + "\n");
+			print(" Gross Salary : " + castemployee.getGrossSalary() + "\n");
+			print(" Net Salary : " + castemployee.getNetSalary() + "\n");
 		}
-		main.print(" --------------------------- " + "\n");
-		main.print("\n");
+		print(" --------------------------- " + "\n");
+		print("\n");
 	}
 
 	// 3. PRINT A SPECIFIC EMPLOYEE
@@ -43,28 +43,28 @@ public class ReusaxCorp {
 			EmployeeDefinition castemployee = (EmployeeDefinition) companyEmployee.get(i);
 
 			if (castemployee.getId().equals(id)) {
-				main.print("\n");
-				main.print("--------------------------- " + "\n");
-				main.print(castemployee.getClassification() + " Data : " + "\n");
+				print("\n");
+				print("--------------------------- " + "\n");
+				print(castemployee.getClassification() + " Data : " + "\n");
 
 				if (companyEmployee.get(i) instanceof Employee) {
 					Employee UpdatedCast = (Employee) companyEmployee.get(i);
-					main.print(UpdatedCast.toString() + "\n");
+					print(UpdatedCast.toString() + "\n");
 
 				} else if (companyEmployee.get(i) instanceof Intern) {
 					Intern UpdatedCast = (Intern) companyEmployee.get(i);
-					main.print(UpdatedCast.toString() + "\n");
+					print(UpdatedCast.toString() + "\n");
 
 				} else if (companyEmployee.get(i) instanceof Manager) {
 					Manager UpdatedCast = (Manager) companyEmployee.get(i);
-					main.print(UpdatedCast.toString() + "\n");
+					print(UpdatedCast.toString() + "\n");
 
 				} else if (companyEmployee.get(i) instanceof Director) {
 					Director UpdatedCast = (Director) companyEmployee.get(i);
-					main.print(UpdatedCast.toString() + "\n");
+					print(UpdatedCast.toString() + "\n");
 				}
-				main.print(" --------------------------- " + "\n");
-				main.print("\n");
+				print(" --------------------------- " + "\n");
+				print("\n");
 				return;
 			}
 		}
@@ -327,9 +327,9 @@ public class ReusaxCorp {
 					if (compareInt2 > compareInt1) {
 						// : If a is compare2 is bigger than compare1
 						// : Swaps the elements
-						main.print("hello");
+						print("hello");
 						swap(z , i);
-						main.print("hello");
+						print("hello");
 					}
 				}
 			}
@@ -373,4 +373,13 @@ public class ReusaxCorp {
 		}
 		return returnEmployee;
 	}
+	
+	public void print(Object o) {
+		System.out.print(o);
+	}
+	
+	
 }
+
+
+

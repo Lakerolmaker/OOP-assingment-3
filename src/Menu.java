@@ -2,7 +2,7 @@
 public class Menu {
 
 	
-	public static void printLogo() {
+	public void printLogo() {
 		
 				Main main = new Main();
 		
@@ -88,7 +88,7 @@ public class Menu {
 	}
 	
 	
-	public static void sleep(int time){
+	public  void sleep(int time){
 		try        
 		{
 		    Thread.sleep(time);
@@ -99,7 +99,7 @@ public class Menu {
 		}
 	}
 	
-	public static void print(Object o) {
+	public  void print(Object o) {
 	    System.out.print(o);
 	   
 	}
