@@ -1,7 +1,7 @@
 
 public class Menu {
 
-	
+	//: Prints the starts screen annimation
 	public void printLogo() {
 		
 				Main main = new Main();
