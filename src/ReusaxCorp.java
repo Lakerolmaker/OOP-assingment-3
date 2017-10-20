@@ -352,9 +352,7 @@ public class ReusaxCorp {
 					if (compareInt2 > compareInt1) {
 						// : If a is compare2 is bigger than compare1
 						// : Swaps the elements
-						print("hello");
 						swap(z , i);
-						print("hello");
 					}
 				}
 			}
